@@ -9489,6 +9489,9 @@ msgstr "Apri nel pannello File"
 msgid "Open in file viewer"
 msgstr "Apri nel visualizzatore di file"
 
+msgid "Open in Files"
+msgstr "Apri in File"
+
 msgid "Open in Finder"
 msgstr "Apri nel Finder"
 
@@ -11430,6 +11433,9 @@ msgstr "Istruzioni riutilizzabili che i tuoi agenti raccolgono automaticamente"
 
 msgid "Reusable terminal launches. Click a script to edit or drag to reorder. Project setup, run, and teardown commands are lifecycle scripts."
 msgstr "Avvii del terminale riutilizzabili. Clicca su uno script per modificarlo o trascinalo per riordinarlo. I comandi di setup, esecuzione e teardown del progetto sono script di ciclo di vita."
+
+msgid "Reveal in Files"
+msgstr "Mostra in File"
 
 msgid "Reveal in Finder"
 msgstr "Mostra nel Finder"

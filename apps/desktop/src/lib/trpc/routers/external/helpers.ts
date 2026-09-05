@@ -2,6 +2,7 @@ import { spawn } from "node:child_process";
 import nodePath from "node:path";
 import type { ExternalApp } from "@superset/local-db";
 import { TRPCError } from "@trpc/server";
+import { linuxLaunchCommandsFromCache } from "./linux-apps/linux-apps";
 
 /** Map of app IDs to their macOS application names */
 const MACOS_APP_NAMES: Record<ExternalApp, string | null> = {
@@ -17,6 +18,10 @@ const MACOS_APP_NAMES: Record<ExternalApp, string | null> = {
 	warp: "Warp",
 	terminal: "Terminal",
 	ghostty: "Ghostty",
+	ptyxis: null,
+	kitty: null,
+	alacritty: null,
+	wezterm: null,
 	sublime: "Sublime Text",
 	intellij: null, // Multi-edition, uses bundle IDs
 	webstorm: "WebStorm",
@@ -69,6 +74,10 @@ const LINUX_CLI_COMMANDS: Record<ExternalApp, string | null> = {
 	warp: "warp-terminal",
 	terminal: null, // No universal Linux terminal command
 	ghostty: "ghostty",
+	ptyxis: "ptyxis",
+	kitty: "kitty",
+	alacritty: "alacritty",
+	wezterm: "wezterm",
 	sublime: "subl",
 	intellij: null, // Multi-edition, uses CLI candidates
 	webstorm: "webstorm",
@@ -127,7 +136,8 @@ const JETBRAINS_APPS = new Set<ExternalApp>([
  * macOS: Uses `open -b` (bundle ID) for multi-edition apps and `open -a` (app name) for others.
  *        JetBrains IDEs additionally get `-n ... --args <path>` so the path is opened as a
  *        project rather than ignored by an already-running instance (#5090).
- * Linux: Uses direct CLI commands (e.g. `code`, `cursor`, `zed`).
+ * Linux: Prefers the scanned launch spec (absolute PATH shim, Flatpak, …).
+ *        Falls back to CLI names when the cache has not been populated yet.
  */
 export function getAppCommand(
 	app: ExternalApp,
@@ -159,7 +169,12 @@ export function getAppCommand(
 		];
 	}
 
-	// Linux (and other non-macOS platforms)
+	if (platform === "linux") {
+		const fromCache = linuxLaunchCommandsFromCache(app, targetPath);
+		if (fromCache !== undefined) return fromCache;
+	}
+
+	// Linux (and other non-macOS platforms) — static CLI fallback when unscanned
 	const linuxCandidates = LINUX_CLI_CANDIDATES[app];
 	if (linuxCandidates) {
 		return linuxCandidates.map((cmd) => ({
@@ -372,11 +387,16 @@ export function resolvePath(filePath: string, cwd?: string): string {
  * Spawns a process and waits for it to complete.
  * @throws Error if the process exits with non-zero code or fails to spawn
  */
-export function spawnAsync(command: string, args: string[]): Promise<void> {
+export function spawnAsync(
+	command: string,
+	args: string[],
+	options?: { env?: NodeJS.ProcessEnv },
+): Promise<void> {
 	return new Promise((resolve, reject) => {
 		const child = spawn(command, args, {
 			stdio: ["ignore", "ignore", "pipe"],
 			detached: false,
+			env: options?.env,
 		});
 
 		let stderr = "";

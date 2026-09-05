@@ -9489,6 +9489,9 @@ msgstr "파일 패널에서 열기"
 msgid "Open in file viewer"
 msgstr "파일 뷰어에서 열기"
 
+msgid "Open in Files"
+msgstr "파일에서 열기"
+
 msgid "Open in Finder"
 msgstr "Finder에서 열기"
 
@@ -11430,6 +11433,9 @@ msgstr "에이전트가 자동으로 가져다 쓰는 재사용 가능한 지침
 
 msgid "Reusable terminal launches. Click a script to edit or drag to reorder. Project setup, run, and teardown commands are lifecycle scripts."
 msgstr "재사용 가능한 터미널 실행입니다. 스크립트를 클릭하면 편집하고, 끌어서 순서를 바꿉니다. 프로젝트 설정, 실행, 정리 명령은 라이프사이클 스크립트입니다."
+
+msgid "Reveal in Files"
+msgstr "파일에서 보기"
 
 msgid "Reveal in Finder"
 msgstr "Finder에서 보기"

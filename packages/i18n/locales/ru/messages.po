@@ -9489,6 +9489,9 @@ msgstr "Открыть в панели файла"
 msgid "Open in file viewer"
 msgstr "Открыть в просмотрщике файлов"
 
+msgid "Open in Files"
+msgstr "Открыть в Файлах"
+
 msgid "Open in Finder"
 msgstr "Открыть в Finder"
 
@@ -11430,6 +11433,9 @@ msgstr "Переиспользуемые инструкции, которые а
 
 msgid "Reusable terminal launches. Click a script to edit or drag to reorder. Project setup, run, and teardown commands are lifecycle scripts."
 msgstr "Переиспользуемые запуски терминала. Нажмите на скрипт, чтобы изменить, или перетащите, чтобы изменить порядок. Команды настройки, запуска и очистки проекта — это скрипты жизненного цикла."
+
+msgid "Reveal in Files"
+msgstr "Показать в Файлах"
 
 msgid "Reveal in Finder"
 msgstr "Показать в Finder"

@@ -28,6 +28,7 @@ import {
 	LuFolderOpen,
 } from "react-icons/lu";
 import { FileEditPane } from "renderer/components/FileEditPane";
+import { RevealInFileManagerText } from "renderer/components/OpenInExternalDropdown";
 import { useCopyToClipboard } from "renderer/hooks/useCopyToClipboard";
 import { electronTrpcClient } from "renderer/lib/trpc-client";
 import { SkillIcon } from "renderer/routes/_authenticated/_dashboard/plugins/components/SkillIcon";
@@ -210,7 +211,7 @@ export function SkillPreviewDialog({
 										disabled={!path}
 									>
 										<LuFolderOpen className="size-4" />
-										<Trans>Reveal in Finder</Trans>
+										<RevealInFileManagerText />
 									</DropdownMenuItem>
 									<DropdownMenuItem
 										onSelect={handleCopyMarkdown}

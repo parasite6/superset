@@ -9489,6 +9489,9 @@ msgstr "Buka di panel File"
 msgid "Open in file viewer"
 msgstr "Buka di penampil file"
 
+msgid "Open in Files"
+msgstr "Buka di File"
+
 msgid "Open in Finder"
 msgstr "Buka di Finder"
 
@@ -11430,6 +11433,9 @@ msgstr "Instruksi pakai ulang yang otomatis diambil agen Anda"
 
 msgid "Reusable terminal launches. Click a script to edit or drag to reorder. Project setup, run, and teardown commands are lifecycle scripts."
 msgstr "Peluncuran terminal pakai ulang. Klik sebuah skrip untuk mengedit atau seret untuk mengurutkan ulang. Perintah setup, run, dan teardown proyek adalah skrip lifecycle."
+
+msgid "Reveal in Files"
+msgstr "Tampilkan di File"
 
 msgid "Reveal in Finder"
 msgstr "Tampilkan di Finder"

@@ -13,6 +13,8 @@ import { HiChevronDown } from "react-icons/hi2";
 import {
 	getAppOption,
 	OpenInExternalDropdownItems,
+	resolveOpenInApp,
+	useInstalledExternalApps,
 } from "renderer/components/OpenInExternalDropdown";
 import { useCopyToClipboard } from "renderer/hooks/useCopyToClipboard";
 import { HotkeyLabel, useHotkeyDisplay } from "renderer/hotkeys";
@@ -50,7 +52,8 @@ export function OpenInButton({
 		{ projectId: projectId as string },
 		{ enabled: !!projectId },
 	);
-	const resolvedApp: ExternalApp = defaultApp ?? "cursor";
+	const installed = useInstalledExternalApps();
+	const resolvedApp: ExternalApp = resolveOpenInApp(defaultApp, installed);
 
 	const openInApp = electronTrpc.external.openInApp.useMutation({
 		onSuccess: () => {

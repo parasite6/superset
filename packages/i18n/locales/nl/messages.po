@@ -9489,6 +9489,9 @@ msgstr "Openen in bestandspaneel"
 msgid "Open in file viewer"
 msgstr "Openen in bestandsviewer"
 
+msgid "Open in Files"
+msgstr "Openen in Bestanden"
+
 msgid "Open in Finder"
 msgstr "Openen in Finder"
 
@@ -11430,6 +11433,9 @@ msgstr "Herbruikbare instructies die je agents automatisch oppikken"
 
 msgid "Reusable terminal launches. Click a script to edit or drag to reorder. Project setup, run, and teardown commands are lifecycle scripts."
 msgstr "Herbruikbare terminalstarts. Klik op een script om het te bewerken of sleep om te herordenen. Setup-, run- en teardown-commando's van projecten zijn lifecycle-scripts."
+
+msgid "Reveal in Files"
+msgstr "Tonen in Bestanden"
 
 msgid "Reveal in Finder"
 msgstr "Tonen in Finder"

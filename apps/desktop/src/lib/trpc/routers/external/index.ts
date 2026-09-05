@@ -14,6 +14,7 @@ import { externalUrlLogLabel, isSafeExternalUrl } from "main/lib/safe-url";
 import { z } from "zod";
 import { publicProcedure, router } from "../..";
 import { getWorkspace } from "../workspaces/utils/db-helpers";
+import { getProcessEnvWithShellPath } from "../workspaces/utils/shell-env";
 import { getWorkspacePath } from "../workspaces/utils/worktree";
 import {
 	type ExternalApp,
@@ -22,6 +23,8 @@ import {
 	resolvePath,
 	spawnAsync,
 } from "./helpers";
+import { installedLinuxAppIds } from "./linux-apps/linux-apps";
+import { ensureLinuxAppsScanned } from "./linux-apps/scan";
 
 /**
  * Wraps a tRPC handler so a `RelativePathWithoutCwdError` (thrown by
@@ -84,12 +87,22 @@ async function openPathInApp(
 		return;
 	}
 
+	let spawnEnv: NodeJS.ProcessEnv | undefined;
+	if (process.platform === "linux") {
+		await ensureLinuxAppsScanned();
+		spawnEnv = await getProcessEnvWithShellPath();
+	}
+
 	const candidates = getAppCommand(app, filePath);
 	if (candidates) {
 		let lastError: Error | undefined;
 		for (const cmd of candidates) {
 			try {
-				await spawnAsync(cmd.command, cmd.args);
+				await spawnAsync(
+					cmd.command,
+					cmd.args,
+					spawnEnv ? { env: spawnEnv } : undefined,
+				);
 				return;
 			} catch (error) {
 				lastError = error instanceof Error ? error : new Error(String(error));
@@ -145,6 +158,14 @@ export const createExternalRouter = () => {
 			.mutation(async ({ input }) => {
 				shell.showItemInFolder(input);
 			}),
+
+		listInstalledApps: publicProcedure.query(async () => {
+			if (process.platform !== "linux") {
+				return [...EXTERNAL_APPS];
+			}
+			const detected = await ensureLinuxAppsScanned();
+			return installedLinuxAppIds(detected);
+		}),
 
 		// Opens a folder itself in Finder (like `open <path>`), rather than
 		// highlighting it in its parent the way openInFinder does.

@@ -51,7 +51,10 @@ const FOLDER_INTENT_LABELS: Record<FolderLinkAction, MessageDescriptor> = {
 	external: msg({
 		message: "Open in editor",
 	}),
-	finder: msg({ message: "Open in Finder" }),
+	finder:
+		process.platform === "linux"
+			? msg({ message: "Open in Files" })
+			: msg({ message: "Open in Finder" }),
 };
 
 export function folderIntentLabel(intent: FolderIntent): string | null {

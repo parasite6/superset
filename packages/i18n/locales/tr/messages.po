@@ -9489,6 +9489,9 @@ msgstr "Dosya bölmesinde aç"
 msgid "Open in file viewer"
 msgstr "Dosya görüntüleyicide aç"
 
+msgid "Open in Files"
+msgstr "Dosyalar'da aç"
+
 msgid "Open in Finder"
 msgstr "Finder'da aç"
 
@@ -11430,6 +11433,9 @@ msgstr "Ajanlarınızın otomatik olarak aldığı yeniden kullanılabilir yöne
 
 msgid "Reusable terminal launches. Click a script to edit or drag to reorder. Project setup, run, and teardown commands are lifecycle scripts."
 msgstr "Yeniden kullanılabilir terminal başlatmaları. Düzenlemek için bir betiğe tıklayın veya sıralamak için sürükleyin. Proje kurulum, çalıştırma ve kapatma komutları yaşam döngüsü betikleridir."
+
+msgid "Reveal in Files"
+msgstr "Dosyalar'da göster"
 
 msgid "Reveal in Finder"
 msgstr "Finder'da göster"

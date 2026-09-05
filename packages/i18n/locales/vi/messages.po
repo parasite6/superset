@@ -9489,6 +9489,9 @@ msgstr "Mở trong khung Tệp"
 msgid "Open in file viewer"
 msgstr "Mở trong trình xem tệp"
 
+msgid "Open in Files"
+msgstr "Mở trong Tệp"
+
 msgid "Open in Finder"
 msgstr "Mở trong Finder"
 
@@ -11430,6 +11433,9 @@ msgstr "Hướng dẫn tái sử dụng mà agent của bạn tự nhận"
 
 msgid "Reusable terminal launches. Click a script to edit or drag to reorder. Project setup, run, and teardown commands are lifecycle scripts."
 msgstr "Các lệnh terminal dùng lại được. Nhấp vào một script để sửa hoặc kéo để sắp xếp lại. Lệnh thiết lập, chạy và dọn dẹp của dự án là script vòng đời."
+
+msgid "Reveal in Files"
+msgstr "Hiện trong Tệp"
 
 msgid "Reveal in Finder"
 msgstr "Hiện trong Finder"

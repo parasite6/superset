@@ -1,6 +1,10 @@
 import type { ExternalApp } from "@superset/local-db";
 import { createFileRoute, notFound, useNavigate } from "@tanstack/react-router";
 import { useCallback, useEffect, useMemo, useState } from "react";
+import {
+	resolveOpenInApp,
+	useInstalledExternalApps,
+} from "renderer/components/OpenInExternalDropdown";
 import { useCopyToClipboard } from "renderer/hooks/useCopyToClipboard";
 import { useFileOpenMode } from "renderer/hooks/useFileOpenMode";
 import { useHotkey } from "renderer/hotkeys";
@@ -287,7 +291,11 @@ function WorkspacePage() {
 		{ projectId: projectId as string },
 		{ enabled: !!projectId },
 	);
-	const resolvedDefaultApp: ExternalApp = defaultApp ?? "cursor";
+	const installed = useInstalledExternalApps();
+	const resolvedDefaultApp: ExternalApp = resolveOpenInApp(
+		defaultApp,
+		installed,
+	);
 	const utils = electronTrpc.useUtils();
 	const { mutate: mutateOpenInApp } =
 		electronTrpc.external.openInApp.useMutation({

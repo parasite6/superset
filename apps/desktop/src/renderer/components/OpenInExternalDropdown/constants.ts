@@ -37,7 +37,7 @@ export interface OpenInExternalAppOption {
 export const FINDER_OPTIONS: OpenInExternalAppOption[] = [
 	{
 		id: "finder",
-		label: "Finder",
+		label: process.platform === "linux" ? "Files" : "Finder",
 		lightIcon: finderIcon,
 		darkIcon: finderIcon,
 	},
@@ -72,22 +72,62 @@ export const IDE_OPTIONS: OpenInExternalAppOption[] = [
 	{ id: "xcode", label: "Xcode", lightIcon: xcodeIcon, darkIcon: xcodeIcon },
 ];
 
-export const TERMINAL_OPTIONS: OpenInExternalAppOption[] = [
-	{ id: "iterm", label: "iTerm", lightIcon: itermIcon, darkIcon: itermIcon },
-	{ id: "warp", label: "Warp", lightIcon: warpIcon, darkIcon: warpIcon },
-	{
-		id: "terminal",
-		label: "Terminal",
-		lightIcon: terminalIcon,
-		darkIcon: terminalIcon,
-	},
-	{
-		id: "ghostty",
-		label: "Ghostty",
-		lightIcon: ghosttyIcon,
-		darkIcon: ghosttyIcon,
-	},
-];
+export const TERMINAL_OPTIONS: OpenInExternalAppOption[] =
+	process.platform === "linux"
+		? [
+				{
+					id: "ptyxis",
+					label: "Ptyxis",
+					lightIcon: terminalIcon,
+					darkIcon: terminalIcon,
+				},
+				{
+					id: "kitty",
+					label: "Kitty",
+					lightIcon: terminalIcon,
+					darkIcon: terminalIcon,
+				},
+				{
+					id: "alacritty",
+					label: "Alacritty",
+					lightIcon: terminalIcon,
+					darkIcon: terminalIcon,
+				},
+				{
+					id: "wezterm",
+					label: "WezTerm",
+					lightIcon: terminalIcon,
+					darkIcon: terminalIcon,
+				},
+				{
+					id: "ghostty",
+					label: "Ghostty",
+					lightIcon: ghosttyIcon,
+					darkIcon: ghosttyIcon,
+				},
+				{ id: "warp", label: "Warp", lightIcon: warpIcon, darkIcon: warpIcon },
+			]
+		: [
+				{
+					id: "iterm",
+					label: "iTerm",
+					lightIcon: itermIcon,
+					darkIcon: itermIcon,
+				},
+				{ id: "warp", label: "Warp", lightIcon: warpIcon, darkIcon: warpIcon },
+				{
+					id: "terminal",
+					label: "Terminal",
+					lightIcon: terminalIcon,
+					darkIcon: terminalIcon,
+				},
+				{
+					id: "ghostty",
+					label: "Ghostty",
+					lightIcon: ghosttyIcon,
+					darkIcon: ghosttyIcon,
+				},
+			];
 
 export const APP_OPTIONS: OpenInExternalAppOption[] = [
 	...FINDER_OPTIONS,

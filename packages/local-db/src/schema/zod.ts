@@ -168,6 +168,10 @@ export const EXTERNAL_APPS = [
 	"warp",
 	"terminal",
 	"ghostty",
+	"ptyxis",
+	"kitty",
+	"alacritty",
+	"wezterm",
 	// JetBrains IDEs
 	"intellij",
 	"webstorm",
@@ -193,6 +197,10 @@ export const NON_EDITOR_APPS: readonly ExternalApp[] = [
 	"warp",
 	"terminal",
 	"ghostty",
+	"ptyxis",
+	"kitty",
+	"alacritty",
+	"wezterm",
 ] as const;
 
 /**

@@ -9489,6 +9489,9 @@ msgstr "Im Dateibereich öffnen"
 msgid "Open in file viewer"
 msgstr "Im Dateibetrachter öffnen"
 
+msgid "Open in Files"
+msgstr "In Dateien öffnen"
+
 msgid "Open in Finder"
 msgstr "Im Finder öffnen"
 
@@ -11430,6 +11433,9 @@ msgstr "Wiederverwendbare Anweisungen, die deine Agenten automatisch aufgreifen"
 
 msgid "Reusable terminal launches. Click a script to edit or drag to reorder. Project setup, run, and teardown commands are lifecycle scripts."
 msgstr "Wiederverwendbare Terminal-Starts. Klicke ein Skript zum Bearbeiten an oder zieh es zum Umsortieren. Setup-, Run- und Teardown-Befehle eines Projekts sind Lifecycle-Skripte."
+
+msgid "Reveal in Files"
+msgstr "In Dateien anzeigen"
 
 msgid "Reveal in Finder"
 msgstr "Im Finder anzeigen"

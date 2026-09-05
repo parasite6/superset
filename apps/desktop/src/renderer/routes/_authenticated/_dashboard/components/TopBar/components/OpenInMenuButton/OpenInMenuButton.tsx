@@ -14,6 +14,8 @@ import { HiChevronDown } from "react-icons/hi2";
 import {
 	getAppOption,
 	OpenInExternalDropdownItems,
+	resolveOpenInApp,
+	useInstalledExternalApps,
 } from "renderer/components/OpenInExternalDropdown";
 import { HotkeyLabel, useHotkey, useHotkeyDisplay } from "renderer/hotkeys";
 import { electronTrpc } from "renderer/lib/electron-trpc";
@@ -37,7 +39,8 @@ export const OpenInMenuButton = memo(function OpenInMenuButton({
 		{ projectId: projectId as string },
 		{ enabled: !!projectId, staleTime: 30000 },
 	);
-	const resolvedApp: ExternalApp = defaultApp ?? "finder";
+	const installed = useInstalledExternalApps();
+	const resolvedApp: ExternalApp = resolveOpenInApp(defaultApp, installed);
 	const openInApp = electronTrpc.external.openInApp.useMutation({
 		onSuccess: () => {
 			if (projectId) {

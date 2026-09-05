@@ -6,6 +6,7 @@ import {
 } from "@superset/ui/dropdown-menu";
 import { toast } from "@superset/ui/sonner";
 import { Clipboard, Copy, FolderOpen } from "lucide-react";
+import { RevealInFileManagerText } from "renderer/components/OpenInExternalDropdown";
 import { useCopyToClipboard } from "renderer/hooks/useCopyToClipboard";
 import { electronTrpcClient } from "renderer/lib/trpc-client";
 
@@ -54,7 +55,7 @@ export function PathActions({ absolutePath, relativePath }: PathActionsProps) {
 		<>
 			<DropdownMenuItem onSelect={handleRevealInFinder}>
 				<FolderOpen />
-				<Trans>Reveal in Finder</Trans>
+				<RevealInFileManagerText />
 			</DropdownMenuItem>
 			<DropdownMenuSeparator />
 			<DropdownMenuItem

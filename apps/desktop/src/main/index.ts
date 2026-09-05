@@ -21,6 +21,7 @@ import {
 	loadToken,
 	parseAuthDeepLink,
 } from "lib/trpc/routers/auth/utils/auth-functions";
+import { ensureLinuxAppsScanned } from "lib/trpc/routers/external/linux-apps/scan";
 import { applyShellEnvToProcess } from "lib/trpc/routers/workspaces/utils/shell-env";
 import { env as mainEnv } from "main/env.main";
 import {
@@ -74,9 +75,18 @@ import {
 console.log("[main] Local database ready:", !!localDb);
 const IS_DEV = process.env.NODE_ENV === "development";
 
-void applyShellEnvToProcess().catch((error) => {
-	console.error("[main] Failed to apply shell environment:", error);
-});
+void applyShellEnvToProcess()
+	.catch((error) => {
+		console.error("[main] Failed to apply shell environment:", error);
+	})
+	.then(() => {
+		if (PLATFORM.IS_LINUX) {
+			return ensureLinuxAppsScanned();
+		}
+	})
+	.catch((error) => {
+		console.error("[main] Failed to scan installed Linux apps:", error);
+	});
 
 // Dev mode: label the app with the workspace name so multiple worktrees are
 // distinguishable. This also moves `app.getPath("userData")`, so the workspace

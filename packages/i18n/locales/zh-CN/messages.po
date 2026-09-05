@@ -9489,6 +9489,9 @@ msgstr "在“文件”面板中打开"
 msgid "Open in file viewer"
 msgstr "在文件查看器中打开"
 
+msgid "Open in Files"
+msgstr "在“文件”中打开"
+
 msgid "Open in Finder"
 msgstr "在Finder中打开"
 
@@ -11430,6 +11433,9 @@ msgstr "智能体会自动读取的可复用说明"
 
 msgid "Reusable terminal launches. Click a script to edit or drag to reorder. Project setup, run, and teardown commands are lifecycle scripts."
 msgstr "可复用的终端启动项。点击脚本可编辑，拖动可重新排序。项目的初始化、运行和清理命令属于生命周期脚本。"
+
+msgid "Reveal in Files"
+msgstr "在“文件”中显示"
 
 msgid "Reveal in Finder"
 msgstr "在Finder中显示"

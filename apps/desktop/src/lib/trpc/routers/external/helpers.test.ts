@@ -7,6 +7,10 @@ import {
 	resolvePath,
 	stripPathWrappers,
 } from "./helpers";
+import {
+	clearLinuxLaunchCache,
+	setLinuxLaunchCacheForTests,
+} from "./linux-apps/linux-apps";
 
 describe("getAppCommand", () => {
 	const originalPlatform = process.platform;
@@ -280,6 +284,29 @@ describe("getAppCommand", () => {
 			{ command: "intellij-idea-ultimate", args: ["/path/to/file"] },
 			{ command: "intellij-idea-community", args: ["/path/to/file"] },
 		]);
+	});
+
+	test("uses the cached absolute Linux launch spec when present", () => {
+		setLinuxLaunchCacheForTests(
+			new Map([
+				[
+					"cursor",
+					{
+						command: "/home/you/.local/bin/cursor",
+						argsFor: (targetPath) => [targetPath],
+					},
+				],
+			]),
+		);
+		try {
+			const result = getAppCommand("cursor", "/proj", "linux");
+			expect(result).toEqual([
+				{ command: "/home/you/.local/bin/cursor", args: ["/proj"] },
+			]);
+			expect(getAppCommand("zed", "/proj", "linux")).toBeNull();
+		} finally {
+			clearLinuxLaunchCache();
+		}
 	});
 });
 

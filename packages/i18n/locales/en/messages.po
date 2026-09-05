@@ -9489,6 +9489,9 @@ msgstr "Open in File pane"
 msgid "Open in file viewer"
 msgstr "Open in file viewer"
 
+msgid "Open in Files"
+msgstr "Open in Files"
+
 msgid "Open in Finder"
 msgstr "Open in Finder"
 
@@ -11430,6 +11433,9 @@ msgstr "Reusable instructions your agents pick up automatically"
 
 msgid "Reusable terminal launches. Click a script to edit or drag to reorder. Project setup, run, and teardown commands are lifecycle scripts."
 msgstr "Reusable terminal launches. Click a script to edit or drag to reorder. Project setup, run, and teardown commands are lifecycle scripts."
+
+msgid "Reveal in Files"
+msgstr "Reveal in Files"
 
 msgid "Reveal in Finder"
 msgstr "Reveal in Finder"

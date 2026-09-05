@@ -9489,6 +9489,9 @@ msgstr "Otevřít v panelu souboru"
 msgid "Open in file viewer"
 msgstr "Otevřít v prohlížeči souborů"
 
+msgid "Open in Files"
+msgstr "Otevřít v Souborech"
+
 msgid "Open in Finder"
 msgstr "Otevřít ve Finderu"
 
@@ -11430,6 +11433,9 @@ msgstr "Znovupoužitelné instrukce, které si agenti automaticky načtou"
 
 msgid "Reusable terminal launches. Click a script to edit or drag to reorder. Project setup, run, and teardown commands are lifecycle scripts."
 msgstr "Znovupoužitelná spuštění terminálu. Kliknutím skript upravíte, přetažením změníte pořadí. Příkazy pro setup, spuštění a teardown projektu jsou lifecycle skripty."
+
+msgid "Reveal in Files"
+msgstr "Zobrazit v Souborech"
 
 msgid "Reveal in Finder"
 msgstr "Zobrazit ve Finderu"

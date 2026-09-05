@@ -9489,6 +9489,9 @@ msgstr "ファイルペインで開く"
 msgid "Open in file viewer"
 msgstr "ファイルビューアで開く"
 
+msgid "Open in Files"
+msgstr "ファイルで開く"
+
 msgid "Open in Finder"
 msgstr "Finderで開く"
 
@@ -11430,6 +11433,9 @@ msgstr "エージェントが自動的に取り込む再利用可能な指示"
 
 msgid "Reusable terminal launches. Click a script to edit or drag to reorder. Project setup, run, and teardown commands are lifecycle scripts."
 msgstr "再利用可能なターミナル起動。クリックで編集、ドラッグで並べ替え。プロジェクトのセットアップ・実行・ティアダウンコマンドはライフサイクルスクリプトです。"
+
+msgid "Reveal in Files"
+msgstr "ファイルに表示"
 
 msgid "Reveal in Finder"
 msgstr "Finderに表示"

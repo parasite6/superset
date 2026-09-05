@@ -6,7 +6,11 @@ import { BsTerminalPlus } from "react-icons/bs";
 import { LuExternalLink, LuSearch, LuTrash2 } from "react-icons/lu";
 import { TbWorld } from "react-icons/tb";
 import { GitHubStarPill } from "renderer/components/GitHubStarPill";
-import { getAppOption } from "renderer/components/OpenInExternalDropdown";
+import {
+	getAppOption,
+	resolveOpenInApp,
+	useInstalledExternalApps,
+} from "renderer/components/OpenInExternalDropdown";
 import { useHotkeyDisplay } from "renderer/hotkeys";
 import { electronTrpc } from "renderer/lib/electron-trpc";
 import { useWorkspaceDeleteHandler } from "renderer/react-query/workspaces";
@@ -53,7 +57,11 @@ export function EmptyTabView({
 	const { keys: quickOpenDisplay } = useHotkeyDisplay("QUICK_OPEN");
 	const { keys: newBrowserDisplay } = useHotkeyDisplay("NEW_BROWSER");
 	const { keys: openInAppDisplay } = useHotkeyDisplay("OPEN_IN_APP");
-	const resolvedExternalApp: ExternalApp = defaultExternalApp ?? "cursor";
+	const installed = useInstalledExternalApps();
+	const resolvedExternalApp: ExternalApp = resolveOpenInApp(
+		defaultExternalApp,
+		installed,
+	);
 
 	const handleShowTerminal = useCallback(() => {
 		addTab(workspaceId);

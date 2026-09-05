@@ -25,6 +25,7 @@ import {
 	LuX,
 } from "react-icons/lu";
 import { ColorSelector } from "renderer/components/ColorSelector";
+import { OpenInFileManagerText } from "renderer/components/OpenInExternalDropdown";
 import { electronTrpc } from "renderer/lib/electron-trpc";
 import { useUpdateProject } from "renderer/react-query/projects/useUpdateProject";
 import { navigateToWorkspace } from "renderer/routes/_authenticated/_dashboard/utils/workspace-navigation";
@@ -219,7 +220,7 @@ export function ProjectHeader({
 								className="size-4 mr-2"
 								strokeWidth={STROKE_WIDTH}
 							/>
-							Open in Finder
+							<OpenInFileManagerText />
 						</ContextMenuItem>
 						<ContextMenuItem onSelect={handleOpenSettings}>
 							<LuSettings className="size-4 mr-2" strokeWidth={STROKE_WIDTH} />
@@ -347,7 +348,7 @@ export function ProjectHeader({
 					<ContextMenuSeparator />
 					<ContextMenuItem onSelect={handleOpenInFinder}>
 						<LuFolderOpen className="size-4 mr-2" strokeWidth={STROKE_WIDTH} />
-						Open in Finder
+						<OpenInFileManagerText />
 					</ContextMenuItem>
 					<ContextMenuItem onSelect={handleOpenSettings}>
 						<LuSettings className="size-4 mr-2" strokeWidth={STROKE_WIDTH} />

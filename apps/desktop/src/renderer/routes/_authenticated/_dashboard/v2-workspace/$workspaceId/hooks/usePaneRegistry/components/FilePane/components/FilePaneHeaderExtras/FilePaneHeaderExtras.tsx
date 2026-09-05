@@ -4,6 +4,7 @@ import { Tooltip, TooltipContent, TooltipTrigger } from "@superset/ui/tooltip";
 import { useCallback } from "react";
 import { LuCheck, LuCopy } from "react-icons/lu";
 import { TbExternalLink, TbFolderOpen } from "react-icons/tb";
+import { RevealInFileManagerText } from "renderer/components/OpenInExternalDropdown";
 import { useCopyToClipboard } from "renderer/hooks/useCopyToClipboard";
 import { electronTrpc } from "renderer/lib/electron-trpc";
 import { useOpenInExternalEditor } from "renderer/routes/_authenticated/_dashboard/v2-workspace/$workspaceId/hooks/useOpenInExternalEditor";
@@ -90,9 +91,11 @@ export function FilePaneHeaderExtras({
 				<TooltipTrigger asChild>
 					<button
 						type="button"
-						aria-label={t({
-							message: "Reveal in Finder",
-						})}
+						aria-label={
+							process.platform === "linux"
+								? t({ message: "Reveal in Files" })
+								: t({ message: "Reveal in Finder" })
+						}
 						onClick={handleOpenInFinder}
 						className="rounded p-1 text-muted-foreground/60 transition-colors hover:text-muted-foreground"
 					>
@@ -100,7 +103,7 @@ export function FilePaneHeaderExtras({
 					</button>
 				</TooltipTrigger>
 				<TooltipContent side="bottom">
-					<Trans>Reveal in Finder</Trans>
+					<RevealInFileManagerText />
 				</TooltipContent>
 			</Tooltip>
 			<Tooltip>

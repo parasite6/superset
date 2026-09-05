@@ -15,6 +15,8 @@ import { VscChevronDown } from "react-icons/vsc";
 import {
 	getAppOption,
 	OpenInExternalDropdownItems,
+	resolveOpenInApp,
+	useInstalledExternalApps,
 } from "renderer/components/OpenInExternalDropdown";
 import { HotkeyLabel, useHotkey, useHotkeyDisplay } from "renderer/hotkeys";
 import { electronTrpc } from "renderer/lib/electron-trpc";
@@ -38,7 +40,8 @@ export function V2OpenInMenuButton({
 
 	const { app: persistedApp, setApp: persistDefaultApp } =
 		useV2ProjectDefaultApp(projectId ?? undefined);
-	const resolvedApp: ExternalApp = persistedApp ?? "finder";
+	const installed = useInstalledExternalApps();
+	const resolvedApp: ExternalApp = resolveOpenInApp(persistedApp, installed);
 
 	const openInApp = electronTrpc.external.openInApp.useMutation({
 		onSuccess: (_data, variables) => {

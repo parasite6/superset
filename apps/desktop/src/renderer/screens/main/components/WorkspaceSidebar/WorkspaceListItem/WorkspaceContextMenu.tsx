@@ -29,6 +29,7 @@ import {
 	LuPencil,
 	LuX,
 } from "react-icons/lu";
+import { OpenInFileManagerText } from "renderer/components/OpenInExternalDropdown";
 import { useHotkeyDisplay } from "renderer/hotkeys";
 import {
 	useCreateSectionFromWorkspaces,
@@ -153,7 +154,7 @@ export function WorkspaceContextMenu({
 		<>
 			<ContextMenuItem onSelect={onOpenInFinder}>
 				<LuFolderOpen className="size-4 mr-2" strokeWidth={STROKE_WIDTH} />
-				Open in Finder
+				<OpenInFileManagerText />
 			</ContextMenuItem>
 			<ContextMenuItem onSelect={onOpenInEditor}>
 				<LuExternalLink className="size-4 mr-2" strokeWidth={STROKE_WIDTH} />

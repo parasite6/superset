@@ -30,6 +30,7 @@ import {
 	LuUnlink,
 	LuX,
 } from "react-icons/lu";
+import { OpenInFileManagerText } from "renderer/components/OpenInExternalDropdown";
 import { useHotkeyDisplay } from "renderer/hotkeys";
 import { useDashboardSidebarPortKill } from "../../../../hooks/useDashboardSidebarPortKill";
 import { useProjectTagFolderSections } from "../../../../hooks/useProjectTagFolderSections";
@@ -145,7 +146,7 @@ export function DashboardSidebarWorkspaceContextMenu({
 						{onRename && <ContextMenuSeparator />}
 						<ContextMenuItem onSelect={onOpenInFinder}>
 							<LuFolderOpen className="size-4 mr-2" />
-							<Trans>Open in Finder</Trans>
+							<OpenInFileManagerText />
 						</ContextMenuItem>
 						<ContextMenuItem onSelect={onCopyPath}>
 							<LuCopy className="size-4 mr-2" />

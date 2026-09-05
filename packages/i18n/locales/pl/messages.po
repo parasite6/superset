@@ -9489,6 +9489,9 @@ msgstr "Otwórz w panelu Plik"
 msgid "Open in file viewer"
 msgstr "Otwórz w podglądzie pliku"
 
+msgid "Open in Files"
+msgstr "Otwórz w Plikach"
+
 msgid "Open in Finder"
 msgstr "Otwórz w Finderze"
 
@@ -11430,6 +11433,9 @@ msgstr "Instrukcje wielokrotnego użytku, które agenci podchwytują automatyczn
 
 msgid "Reusable terminal launches. Click a script to edit or drag to reorder. Project setup, run, and teardown commands are lifecycle scripts."
 msgstr "Uruchomienia terminala wielokrotnego użytku. Kliknij skrypt, aby go edytować, lub przeciągnij, aby zmienić kolejność. Polecenia konfiguracji, uruchamiania i sprzątania projektu to skrypty cyklu życia."
+
+msgid "Reveal in Files"
+msgstr "Pokaż w Plikach"
 
 msgid "Reveal in Finder"
 msgstr "Pokaż w Finderze"

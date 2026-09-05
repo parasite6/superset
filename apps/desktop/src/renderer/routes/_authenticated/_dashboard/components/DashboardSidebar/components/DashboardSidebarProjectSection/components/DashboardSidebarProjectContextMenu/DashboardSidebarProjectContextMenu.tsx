@@ -19,6 +19,7 @@ import {
 	LuSettings,
 	LuTrash2,
 } from "react-icons/lu";
+import { OpenInFileManagerText } from "renderer/components/OpenInExternalDropdown";
 import { useV2UserPreferences } from "renderer/hooks/useV2UserPreferences";
 
 interface DashboardSidebarProjectContextMenuProps {
@@ -58,7 +59,7 @@ export function DashboardSidebarProjectContextMenu({
 				<ContextMenuSeparator />
 				<ContextMenuItem onSelect={onOpenInFinder}>
 					<LuFolderOpen className="size-4 mr-2" />
-					<Trans>Open in Finder</Trans>
+					<OpenInFileManagerText />
 				</ContextMenuItem>
 				<ContextMenuItem onSelect={onOpenSettings}>
 					<LuSettings className="size-4 mr-2" />
