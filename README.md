@@ -12,8 +12,11 @@
 
 </details>
 
-[![GitHub stars](https://img.shields.io/github/stars/superset-sh/superset?style=flat&logo=github)](https://github.com/superset-sh/superset/stargazers)
-[![GitHub release](https://img.shields.io/github/v/release/superset-sh/superset?style=flat&logo=github)](https://github.com/superset-sh/superset/releases)
+
+> **Personal fork.** This is [parasite6/superset](https://github.com/parasite6/superset), my own fork of [superset-sh/superset](https://github.com/superset-sh/superset). I am adapting it for Linux (Fedora / better desktop integration than the upstream AppImage). This is not the upstream project, not affiliated with Superset, Inc., and not a place to file bugs, PRs, or security reports for other people. For the official app, use [upstream](https://github.com/superset-sh/superset).
+
+[![GitHub stars](https://img.shields.io/github/stars/parasite6/superset?style=flat&logo=github)](https://github.com/parasite6/superset/stargazers)
+[![GitHub release](https://img.shields.io/github/v/release/parasite6/superset?style=flat&logo=github)](https://github.com/parasite6/superset/releases)
 [![License](https://img.shields.io/badge/license-Elastic%20License%202.0-blue?style=flat)](LICENSE.md)
 [![Twitter](https://img.shields.io/badge/@superset__sh-555?logo=x)](https://x.com/superset_sh)
 [![Discord](https://img.shields.io/badge/Discord-555?logo=discord)](https://discord.gg/cZeD9WYcV7)
@@ -25,7 +28,7 @@ Spend your time shipping, not waiting.
 
 <br />
 
-[**Download for macOS**](https://github.com/superset-sh/superset/releases/latest) &nbsp;&bull;&nbsp; [Documentation](https://docs.superset.sh) &nbsp;&bull;&nbsp; [Changelog](https://github.com/superset-sh/superset/releases) &nbsp;&bull;&nbsp; [Discord](https://discord.gg/cZeD9WYcV7)
+[**Upstream downloads**](https://github.com/superset-sh/superset/releases/latest) (macOS-first) &nbsp;&bull;&nbsp; [Documentation](https://docs.superset.sh) &nbsp;&bull;&nbsp; [Upstream changelog](https://github.com/superset-sh/superset/releases) &nbsp;&bull;&nbsp; [Discord](https://discord.gg/cZeD9WYcV7)
 
 <br />
 
@@ -249,22 +252,19 @@ An iOS app is coming soon so you can check on your agents from your phone.
 
 ## Install
 
-Download the desktop app:
+This fork is aimed at **Linux** (I'm on Fedora). Upstream is still macOS-first and only ships an experimental AppImage for Linux.
 
-- **macOS**: [Apple Silicon (.dmg)](https://github.com/superset-sh/superset/releases/latest/download/Superset-arm64.dmg) · [Intel (.dmg)](https://github.com/superset-sh/superset/releases/latest/download/Superset-x64.dmg)
-- **Linux**: [x64 AppImage](https://github.com/superset-sh/superset/releases/latest/download/Superset-x86_64.AppImage) (experimental; macOS is the primary target)
-- **Windows**: not yet available
-- [All builds](https://github.com/superset-sh/superset/releases/latest)
+- **This fork:** build from source for now (see Development). I may publish Linux packages here later.
+- **Upstream binaries (unchanged):** [macOS Apple Silicon](https://github.com/superset-sh/superset/releases/latest/download/Superset-arm64.dmg) · [macOS Intel](https://github.com/superset-sh/superset/releases/latest/download/Superset-x64.dmg) · [Linux AppImage](https://github.com/superset-sh/superset/releases/latest/download/Superset-x86_64.AppImage) · [all upstream builds](https://github.com/superset-sh/superset/releases/latest)
 
-All you need installed is [Git](https://git-scm.com/). [gh](https://cli.github.com/) is optional and unlocks the PR workflows; Superset offers to install it for you.
+You still need [Git](https://git-scm.com/). [gh](https://cli.github.com/) is optional.
 
 ## Development
 
-Want to hack on Superset or contribute a PR? Clone the repository, add it to the
-installed Superset app, and create a workspace for your change:
+Personal development on this fork. Clone it, add it to an installed Superset app if you use one, and create a workspace for your change:
 
 ```bash
-git clone https://github.com/superset-sh/superset.git
+git clone https://github.com/parasite6/superset.git
 ```
 
 Then run the development setup from that workspace terminal:
@@ -282,9 +282,9 @@ No Neon account or third-party credentials are needed. `setup.local.sh` brings
 up a local Postgres + Electric stack via Docker and seeds a dev account. Sign in
 with the **"Sign in as dev"** button (or `admin@local.test` / `supersetdev`).
 
-Prereqs: [Bun](https://bun.sh/) v1.3.14+ (pinned in `.bun-version`), `docker`, `jq`, and `caddy`, which `bun dev` runs as the local HTTPS proxy (`brew install jq caddy && caddy trust`).
+Prereqs: [Bun](https://bun.sh/) v1.3.14+ (pinned in `.bun-version`), `docker`, `jq`, and `caddy`, which `bun dev` runs as the local HTTPS proxy. On Fedora/Linux install those from your package manager (or Bun's install script); upstream docs often assume `brew` on macOS.
 
-See [**DEVELOPMENT.md**](./DEVELOPMENT.md) for the full guide: what the setup script does, manual setup against real services, common commands, troubleshooting, and how to build the desktop app. Contribution process lives in [**CONTRIBUTING.md**](./CONTRIBUTING.md).
+See [**DEVELOPMENT.md**](./DEVELOPMENT.md) for the full guide: what the setup script does, manual setup against real services, common commands, troubleshooting, and how to build the desktop app. Upstream contribution docs are in [**CONTRIBUTING.md**](./CONTRIBUTING.md); this fork is not taking outside PRs.
 
 ## Configuration
 
@@ -322,29 +322,19 @@ Keyboard shortcuts are customizable via **Settings → Keyboard Shortcuts** (⌘
 
 ## Contributing
 
-We welcome contributions! See [CONTRIBUTING.md](CONTRIBUTING.md) for how to get set up and open a PR. Bugs and feature requests go in [issues](https://github.com/superset-sh/superset/issues).
+Not open for contributions. This is a personal fork for my own Linux work.
 
-<a href="https://github.com/superset-sh/superset/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=superset-sh/superset" />
-</a>
+If you want to contribute to Superset itself, use [upstream](https://github.com/superset-sh/superset) and their [CONTRIBUTING.md](https://github.com/superset-sh/superset/blob/main/CONTRIBUTING.md).
 
-## Community
+## Support / issues
 
-Join the Superset community to get help, share feedback, and connect with other users:
+I am not running support, bug triage, or exploit fixes for other people on this fork. Please do not open issues here expecting a response.
 
-- **[Discord](https://discord.gg/cZeD9WYcV7)**: chat with the team and community
-- **[Twitter](https://x.com/superset_sh)**: follow for updates and announcements
-- **[GitHub Issues](https://github.com/superset-sh/superset/issues)**: report bugs and request features
-- **[GitHub Discussions](https://github.com/superset-sh/superset/discussions)**: ask questions and share ideas
+- Upstream bugs / features: [superset-sh/superset issues](https://github.com/superset-sh/superset/issues)
+- Upstream community: [Discord](https://discord.gg/cZeD9WYcV7) · [X](https://x.com/superset_sh) · [Discussions](https://github.com/superset-sh/superset/discussions)
 
-### Team
+## License
 
-[![Avi Twitter](https://img.shields.io/badge/Avi-@avimakesrobots-555?logo=x)](https://x.com/avimakesrobots)
-[![Kiet Twitter](https://img.shields.io/badge/Kiet-@flyakiet-555?logo=x)](https://x.com/flyakiet)
-[![Satya Twitter](https://img.shields.io/badge/Satya-@saddle__paddle-555?logo=x)](https://x.com/saddle_paddle)
+Same as upstream: [Elastic License 2.0](LICENSE.md). Copyright remains with Superset, Inc. where their notices say so. This fork does not relicense the project.
 
-## License & what's free forever
-
-**The desktop app is free forever.** Running agents in parallel on your own machine will never require payment. Anything we charge for will be an optional service on top.
-
-The whole app is in this repo under the [Elastic License 2.0](LICENSE.md): use it, fork it, modify it, self-host it for your team. The only thing off the table is repackaging Superset itself as a service you sell to others.
+Upstream's note still applies: the desktop app is free to run on your own machine; you may not repackage Superset itself as a hosted service you sell to others.
