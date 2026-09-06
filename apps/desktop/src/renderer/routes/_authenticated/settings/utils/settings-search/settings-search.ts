@@ -36,6 +36,7 @@ export const SETTING_ITEM_ID = {
 
 	KEYBOARD_SHORTCUTS: "keyboard-shortcuts",
 	BEHAVIOR_CONFIRM_QUIT: "behavior-confirm-quit",
+	BEHAVIOR_KEEP_IN_TRAY: "behavior-keep-in-tray",
 	BEHAVIOR_FILE_OPEN_MODE: "behavior-file-open-mode",
 	BEHAVIOR_CHANGES_OPEN_TARGET: "behavior-changes-open-target",
 	BEHAVIOR_RESOURCE_MONITOR: "behavior-resource-monitor",
@@ -179,6 +180,7 @@ export const SETTING_ITEM_VARIANT: Record<SettingItemId, SettingVariant> = {
 	[SETTING_ITEM_ID.KEYBOARD_SHORTCUTS]: "shared",
 
 	[SETTING_ITEM_ID.BEHAVIOR_CONFIRM_QUIT]: "shared",
+	[SETTING_ITEM_ID.BEHAVIOR_KEEP_IN_TRAY]: "shared",
 	[SETTING_ITEM_ID.BEHAVIOR_FILE_OPEN_MODE]: "v1",
 	// The top-bar Changes control is a v2-only surface.
 	[SETTING_ITEM_ID.BEHAVIOR_CHANGES_OPEN_TARGET]: "v2",
@@ -751,6 +753,24 @@ export const SETTINGS_ITEMS: SettingsItem[] = [
 			"warning",
 			"prompt",
 			"unsaved",
+		],
+	},
+	{
+		id: SETTING_ITEM_ID.BEHAVIOR_KEEP_IN_TRAY,
+		section: "behavior",
+		title: "Keep in tray",
+		description:
+			"Keep the app running in the system tray when closing the last window",
+		keywords: [
+			"tray",
+			"panel",
+			"appindicator",
+			"close",
+			"quit",
+			"background",
+			"gnome",
+			"linux",
+			"system tray",
 		],
 	},
 	{

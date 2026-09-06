@@ -6415,6 +6415,9 @@ msgstr "Nadaj kluczowi opisową nazwę, aby pamiętać, gdzie jest używany."
 msgid "Globe"
 msgstr "Kula ziemska"
 
+msgid "GNOME needs the AppIndicator extension for tray icons to appear."
+msgstr "GNOME wymaga rozszerzenia AppIndicator, aby ikony pojawiały się w zasobniku."
+
 msgid "Go back"
 msgstr "Wstecz"
 
@@ -7004,6 +7007,9 @@ msgstr "Instalacja nie powiodła się"
 msgid "Install GitHub App"
 msgstr "Zainstaluj aplikację GitHub"
 
+msgid "Install gnome-shell-extension-appindicator, enable appindicatorsupport@rgcjonas.gmail.com, then log out."
+msgstr "Zainstaluj gnome-shell-extension-appindicator, włącz appindicatorsupport@rgcjonas.gmail.com, a następnie wyloguj się."
+
 msgid "Install Superset MCP in your client"
 msgstr "Zainstaluj Superset MCP w swoim kliencie"
 
@@ -7268,6 +7274,12 @@ msgstr "Kbd"
 
 msgid "Keep docs fresh"
 msgstr "Utrzymuj dokumentację aktualną"
+
+msgid "Keep in tray"
+msgstr "Trzymaj w zasobniku"
+
+msgid "Keep the app running in the system tray when closing the last window"
+msgstr "Po zamknięciu ostatniego okna aplikacja pozostaje w zasobniku systemowym"
 
 msgid "Keep waiting"
 msgstr "Czekaj dalej"
@@ -14341,6 +14353,9 @@ msgstr "Śledzenie"
 msgid "Translated"
 msgstr "Przetłumaczone"
 
+msgid "Tray icon needs AppIndicator"
+msgstr "Ikona w zasobniku wymaga AppIndicator"
+
 msgid "Tree view"
 msgstr "Widok drzewa"
 
@@ -14485,6 +14500,9 @@ msgstr "Uruchomienia bez nadzoru trwające 8 godzin lub dłużej kończą się s
 
 msgid "Unavailable"
 msgstr "Niedostępne"
+
+msgid "Unavailable while Keep in tray is on — closing the last window hides the app instead of quitting"
+msgstr "Niedostępne, gdy włączone jest „Trzymaj w zasobniku” — zamknięcie ostatniego okna ukrywa aplikację zamiast ją zakończyć"
 
 msgid "Unavailable: {unavailableReason}"
 msgstr "Niedostępne: {unavailableReason}"

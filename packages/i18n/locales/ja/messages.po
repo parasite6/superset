@@ -6415,6 +6415,9 @@ msgstr "どこで使うキーか分かる名前を付けてください。"
 msgid "Globe"
 msgstr "地球"
 
+msgid "GNOME needs the AppIndicator extension for tray icons to appear."
+msgstr "GNOME でトレイアイコンを表示するには AppIndicator 拡張機能が必要です。"
+
 msgid "Go back"
 msgstr "戻る"
 
@@ -7004,6 +7007,9 @@ msgstr "インストールに失敗しました"
 msgid "Install GitHub App"
 msgstr "GitHub Appをインストール"
 
+msgid "Install gnome-shell-extension-appindicator, enable appindicatorsupport@rgcjonas.gmail.com, then log out."
+msgstr "gnome-shell-extension-appindicator をインストールし、appindicatorsupport@rgcjonas.gmail.com を有効にしてからログアウトしてください。"
+
 msgid "Install Superset MCP in your client"
 msgstr "クライアントにSuperset MCPをインストール"
 
@@ -7268,6 +7274,12 @@ msgstr "Kbd"
 
 msgid "Keep docs fresh"
 msgstr "ドキュメントを最新に保つ"
+
+msgid "Keep in tray"
+msgstr "トレイに残す"
+
+msgid "Keep the app running in the system tray when closing the last window"
+msgstr "最後のウィンドウを閉じても、アプリをシステムトレイで実行し続けます"
 
 msgid "Keep waiting"
 msgstr "待ち続ける"
@@ -14341,6 +14353,9 @@ msgstr "計測期間"
 msgid "Translated"
 msgstr "翻訳済み"
 
+msgid "Tray icon needs AppIndicator"
+msgstr "トレイアイコンには AppIndicator が必要です"
+
 msgid "Tree view"
 msgstr "ツリー表示"
 
@@ -14485,6 +14500,9 @@ msgstr "8時間以上の無人実行が、人間の介入なしに定型チケ�
 
 msgid "Unavailable"
 msgstr "利用不可"
+
+msgid "Unavailable while Keep in tray is on — closing the last window hides the app instead of quitting"
+msgstr "「トレイに残す」がオンのときは利用できません。最後のウィンドウを閉じると終了ではなく非表示になります"
 
 msgid "Unavailable: {unavailableReason}"
 msgstr "利用不可: {unavailableReason}"

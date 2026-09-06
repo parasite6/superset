@@ -257,6 +257,15 @@ This fork is aimed at **Linux** (I'm on Fedora). Upstream is still macOS-first a
 - **This fork:** build from source for now (see Development). I may publish Linux packages here later.
 - **Upstream binaries (unchanged):** [macOS Apple Silicon](https://github.com/superset-sh/superset/releases/latest/download/Superset-arm64.dmg) · [macOS Intel](https://github.com/superset-sh/superset/releases/latest/download/Superset-x64.dmg) · [Linux AppImage](https://github.com/superset-sh/superset/releases/latest/download/Superset-x86_64.AppImage) · [all upstream builds](https://github.com/superset-sh/superset/releases/latest)
 
+GNOME needs the AppIndicator extension for the tray icon (KDE and most other desktops already expose StatusNotifierItem). On Fedora:
+
+```bash
+sudo dnf install gnome-shell-extension-appindicator
+gnome-extensions enable appindicatorsupport@rgcjonas.gmail.com
+```
+
+Then log out so GNOME picks up the extension. The RPM this fork builds `Requires` that package; AppImage and `bun run dev` do not, so install it yourself for those.
+
 You still need [Git](https://git-scm.com/). [gh](https://cli.github.com/) is optional.
 
 ## Development

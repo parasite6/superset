@@ -6415,6 +6415,9 @@ msgstr "Geef je sleutel een duidelijke naam zodat je weet waar hij wordt gebruik
 msgid "Globe"
 msgstr "Wereldbol"
 
+msgid "GNOME needs the AppIndicator extension for tray icons to appear."
+msgstr "GNOME heeft de AppIndicator-extensie nodig om systeemvakpictogrammen te tonen."
+
 msgid "Go back"
 msgstr "Terug"
 
@@ -7004,6 +7007,9 @@ msgstr "Installeren mislukt"
 msgid "Install GitHub App"
 msgstr "GitHub App installeren"
 
+msgid "Install gnome-shell-extension-appindicator, enable appindicatorsupport@rgcjonas.gmail.com, then log out."
+msgstr "Installeer gnome-shell-extension-appindicator, schakel appindicatorsupport@rgcjonas.gmail.com in en log daarna uit."
+
 msgid "Install Superset MCP in your client"
 msgstr "Superset MCP installeren in je client"
 
@@ -7268,6 +7274,12 @@ msgstr "Kbd"
 
 msgid "Keep docs fresh"
 msgstr "Docs actueel houden"
+
+msgid "Keep in tray"
+msgstr "In het systeemvak houden"
+
+msgid "Keep the app running in the system tray when closing the last window"
+msgstr "Houd de app actief in het systeemvak als je het laatste venster sluit"
 
 msgid "Keep waiting"
 msgstr "Blijven wachten"
@@ -14341,6 +14353,9 @@ msgstr "Bijgehouden"
 msgid "Translated"
 msgstr "Vertaald"
 
+msgid "Tray icon needs AppIndicator"
+msgstr "Het systeemvakpictogram heeft AppIndicator nodig"
+
 msgid "Tree view"
 msgstr "Boomweergave"
 
@@ -14485,6 +14500,9 @@ msgstr "Onbewaakte runs van 8 uur of langer slagen bij een meerderheid van de ro
 
 msgid "Unavailable"
 msgstr "Niet beschikbaar"
+
+msgid "Unavailable while Keep in tray is on — closing the last window hides the app instead of quitting"
+msgstr "Niet beschikbaar z «In het systeemvak houden» aan — het laatste venster sluiten verbergt de app in plaats van af te sluiten"
 
 msgid "Unavailable: {unavailableReason}"
 msgstr "Niet beschikbaar: {unavailableReason}"

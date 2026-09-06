@@ -6415,6 +6415,9 @@ msgstr "Nerede kullanıldığını hatırlamak için anahtarınıza açıklayıc
 msgid "Globe"
 msgstr "Küre"
 
+msgid "GNOME needs the AppIndicator extension for tray icons to appear."
+msgstr "GNOME'da tepsi simgelerinin görünmesi için AppIndicator uzantısı gerekir."
+
 msgid "Go back"
 msgstr "Geri git"
 
@@ -7004,6 +7007,9 @@ msgstr "Kurulum başarısız"
 msgid "Install GitHub App"
 msgstr "GitHub App'i kur"
 
+msgid "Install gnome-shell-extension-appindicator, enable appindicatorsupport@rgcjonas.gmail.com, then log out."
+msgstr "gnome-shell-extension-appindicator paketini kurun, appindicatorsupport@rgcjonas.gmail.com uzantısını etkinleştirin, ardından oturumu kapatın."
+
 msgid "Install Superset MCP in your client"
 msgstr "Superset MCP'yi istemcinize kurun"
 
@@ -7268,6 +7274,12 @@ msgstr "Kbd"
 
 msgid "Keep docs fresh"
 msgstr "Belgeleri güncel tut"
+
+msgid "Keep in tray"
+msgstr "Sistem tepsisinde tut"
+
+msgid "Keep the app running in the system tray when closing the last window"
+msgstr "Son pencere kapatıldığında uygulamayı sistem tepsisinde çalışır tut"
 
 msgid "Keep waiting"
 msgstr "Beklemeye devam et"
@@ -14341,6 +14353,9 @@ msgstr "İzleme"
 msgid "Translated"
 msgstr "Çevrildi"
 
+msgid "Tray icon needs AppIndicator"
+msgstr "Tepsi simgesi için AppIndicator gerekli"
+
 msgid "Tree view"
 msgstr "Ağaç görünümü"
 
@@ -14485,6 +14500,9 @@ msgstr "8 saat ve üzeri gözetimsiz çalıştırmalar, bir insanın engel kald�
 
 msgid "Unavailable"
 msgstr "Kullanılamıyor"
+
+msgid "Unavailable while Keep in tray is on — closing the last window hides the app instead of quitting"
+msgstr "«Sistem tepsisinde tut» açıkken kullanılamaz — son pencereyi kapatmak uygulamadan çıkmak yerine gizler"
 
 msgid "Unavailable: {unavailableReason}"
 msgstr "Kullanılamıyor: {unavailableReason}"

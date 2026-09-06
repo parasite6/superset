@@ -6415,6 +6415,9 @@ msgstr "Dai alla chiave un nome descrittivo per ricordare dove viene usata."
 msgid "Globe"
 msgstr "Globo"
 
+msgid "GNOME needs the AppIndicator extension for tray icons to appear."
+msgstr "GNOME richiede l'estensione AppIndicator per mostrare le icone nel vassoio."
+
 msgid "Go back"
 msgstr "Indietro"
 
@@ -7004,6 +7007,9 @@ msgstr "Installazione non riuscita"
 msgid "Install GitHub App"
 msgstr "Installa la GitHub App"
 
+msgid "Install gnome-shell-extension-appindicator, enable appindicatorsupport@rgcjonas.gmail.com, then log out."
+msgstr "Installa gnome-shell-extension-appindicator, abilita appindicatorsupport@rgcjonas.gmail.com, poi disconnettiti."
+
 msgid "Install Superset MCP in your client"
 msgstr "Installa Superset MCP nel tuo client"
 
@@ -7268,6 +7274,12 @@ msgstr "Kbd"
 
 msgid "Keep docs fresh"
 msgstr "Mantieni la documentazione aggiornata"
+
+msgid "Keep in tray"
+msgstr "Mantieni nel vassoio"
+
+msgid "Keep the app running in the system tray when closing the last window"
+msgstr "Mantieni l'app in esecuzione nel vassoio di sistema alla chiusura dell'ultima finestra"
 
 msgid "Keep waiting"
 msgstr "Continua ad aspettare"
@@ -14341,6 +14353,9 @@ msgstr "Monitoraggio"
 msgid "Translated"
 msgstr "Tradotto"
 
+msgid "Tray icon needs AppIndicator"
+msgstr "L'icona del vassoio richiede AppIndicator"
+
 msgid "Tree view"
 msgstr "Vista ad albero"
 
@@ -14485,6 +14500,9 @@ msgstr "Esecuzioni non presidiate di 8 ore o più riescono sulla maggior parte d
 
 msgid "Unavailable"
 msgstr "Non disponibile"
+
+msgid "Unavailable while Keep in tray is on — closing the last window hides the app instead of quitting"
+msgstr "Non disponibile con «Mantieni nel vassoio» attivo: chiudere l'ultima finestra nasconde l'app invece di uscire"
 
 msgid "Unavailable: {unavailableReason}"
 msgstr "Non disponibile: {unavailableReason}"

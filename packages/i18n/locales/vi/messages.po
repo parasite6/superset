@@ -6415,6 +6415,9 @@ msgstr "Đặt tên gợi nhớ để biết khóa này dùng ở đâu."
 msgid "Globe"
 msgstr "Quả địa cầu"
 
+msgid "GNOME needs the AppIndicator extension for tray icons to appear."
+msgstr "GNOME cần tiện ích AppIndicator để hiện biểu tượng khay."
+
 msgid "Go back"
 msgstr "Quay lại"
 
@@ -7004,6 +7007,9 @@ msgstr "Cài đặt thất bại"
 msgid "Install GitHub App"
 msgstr "Cài GitHub App"
 
+msgid "Install gnome-shell-extension-appindicator, enable appindicatorsupport@rgcjonas.gmail.com, then log out."
+msgstr "Cài gnome-shell-extension-appindicator, bật appindicatorsupport@rgcjonas.gmail.com, rồi đăng xuất."
+
 msgid "Install Superset MCP in your client"
 msgstr "Cài Superset MCP vào client của bạn"
 
@@ -7268,6 +7274,12 @@ msgstr "Kbd"
 
 msgid "Keep docs fresh"
 msgstr "Giữ tài liệu luôn mới"
+
+msgid "Keep in tray"
+msgstr "Giữ trong khay hệ thống"
+
+msgid "Keep the app running in the system tray when closing the last window"
+msgstr "Giữ ứng dụng chạy trong khay hệ thống khi đóng cửa sổ cuối"
 
 msgid "Keep waiting"
 msgstr "Tiếp tục chờ"
@@ -14341,6 +14353,9 @@ msgstr "Theo dõi"
 msgid "Translated"
 msgstr "Đã dịch"
 
+msgid "Tray icon needs AppIndicator"
+msgstr "Biểu tượng khay cần AppIndicator"
+
 msgid "Tree view"
 msgstr "Xem dạng cây"
 
@@ -14485,6 +14500,9 @@ msgstr "Các lần chạy không giám sát từ 8 giờ trở lên thành công
 
 msgid "Unavailable"
 msgstr "Không khả dụng"
+
+msgid "Unavailable while Keep in tray is on — closing the last window hides the app instead of quitting"
+msgstr "Không dùng được khi bật «Giữ trong khay hệ thống» — đóng cửa sổ cuối sẽ ẩn ứng dụng thay vì thoát"
 
 msgid "Unavailable: {unavailableReason}"
 msgstr "Không khả dụng: {unavailableReason}"

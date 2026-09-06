@@ -14,6 +14,7 @@ import { createAppRouter } from "lib/trpc/routers";
 import { resolveDevWorkspaceName } from "main/lib/dev-workspace-name";
 import { localDb } from "main/lib/local-db";
 import { isExpectedRendererExit } from "main/lib/renderer-exit";
+import { isKeepInTrayEnabled } from "main/lib/tray/setting";
 import { NOTIFICATION_EVENTS, PLATFORM } from "shared/constants";
 import { env } from "shared/env.shared";
 import type { AgentLifecycleEvent } from "shared/notification-types";
@@ -577,7 +578,18 @@ export async function createPlatformWindow({
 		console.error(`  Error:`, error);
 	});
 
-	window.on("close", () => {
+	window.on("close", (event) => {
+		if (
+			!appQuitting &&
+			PLATFORM.IS_LINUX &&
+			isKeepInTrayEnabled() &&
+			getAllWindows().filter((w) => w.id !== window.id).length === 0
+		) {
+			event.preventDefault();
+			window.hide();
+			return;
+		}
+
 		// Save window state first, before any cleanup
 		const isMaximized = window.isMaximized();
 		const bounds = isMaximized ? window.getNormalBounds() : window.getBounds();

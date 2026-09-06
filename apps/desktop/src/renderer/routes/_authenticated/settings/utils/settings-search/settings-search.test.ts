@@ -70,6 +70,13 @@ describe("settings search - font settings", () => {
 	});
 });
 
+describe("settings search - behavior", () => {
+	it('searching "tray" returns Keep in tray', () => {
+		const ids = getIds(searchSettings("tray"));
+		expect(ids).toContain(SETTING_ITEM_ID.BEHAVIOR_KEEP_IN_TRAY);
+	});
+});
+
 describe("settings search - hosts", () => {
 	it('searching "delete host" returns the host deletion setting', () => {
 		const ids = getIds(searchSettings("delete host"));

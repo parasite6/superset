@@ -6415,6 +6415,9 @@ msgstr "Gib deinem Schlüssel einen sprechenden Namen, damit du weißt, wo er ge
 msgid "Globe"
 msgstr "Globus"
 
+msgid "GNOME needs the AppIndicator extension for tray icons to appear."
+msgstr "GNOME benötigt die AppIndicator-Erweiterung, damit Tray-Symbole erscheinen."
+
 msgid "Go back"
 msgstr "Zurück"
 
@@ -7004,6 +7007,9 @@ msgstr "Installation fehlgeschlagen"
 msgid "Install GitHub App"
 msgstr "GitHub-App installieren"
 
+msgid "Install gnome-shell-extension-appindicator, enable appindicatorsupport@rgcjonas.gmail.com, then log out."
+msgstr "Installieren Sie gnome-shell-extension-appindicator, aktivieren Sie appindicatorsupport@rgcjonas.gmail.com und melden Sie sich ab."
+
 msgid "Install Superset MCP in your client"
 msgstr "Superset MCP in deinem Client installieren"
 
@@ -7268,6 +7274,12 @@ msgstr "Kbd"
 
 msgid "Keep docs fresh"
 msgstr "Doku aktuell halten"
+
+msgid "Keep in tray"
+msgstr "Im Benachrichtigungsfeld behalten"
+
+msgid "Keep the app running in the system tray when closing the last window"
+msgstr "App beim Schließen des letzten Fensters im Benachrichtigungsfeld weiterlaufen lassen"
 
 msgid "Keep waiting"
 msgstr "Weiter warten"
@@ -14341,6 +14353,9 @@ msgstr "Erfassung"
 msgid "Translated"
 msgstr "Übersetzt"
 
+msgid "Tray icon needs AppIndicator"
+msgstr "Das Tray-Symbol benötigt AppIndicator"
+
 msgid "Tree view"
 msgstr "Baumansicht"
 
@@ -14485,6 +14500,9 @@ msgstr "Unbeaufsichtigte Läufe von 8 Stunden oder mehr gelingen bei der Mehrhei
 
 msgid "Unavailable"
 msgstr "Nicht verfügbar"
+
+msgid "Unavailable while Keep in tray is on — closing the last window hides the app instead of quitting"
+msgstr "Nicht verfügbar, solange „Im Benachrichtigungsfeld behalten“ aktiv ist — das Schließen des letzten Fensters blendet die App aus, statt sie zu beenden"
 
 msgid "Unavailable: {unavailableReason}"
 msgstr "Nicht verfügbar: {unavailableReason}"

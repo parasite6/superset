@@ -73,6 +73,14 @@ export const SETTINGS: SettingDefinition[] = [
 		defaultValue: true,
 	},
 	{
+		key: "keepInTray",
+		type: "boolean",
+		section: "behavior",
+		description:
+			"Keep the app running in the system tray when closing the last window (Linux)",
+		defaultValue: true,
+	},
+	{
 		key: "fileOpenMode",
 		type: "enum",
 		section: "behavior",

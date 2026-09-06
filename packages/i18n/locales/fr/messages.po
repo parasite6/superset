@@ -6415,6 +6415,9 @@ msgstr "Donnez à votre clé un nom explicite pour vous rappeler où elle est ut
 msgid "Globe"
 msgstr "Globe"
 
+msgid "GNOME needs the AppIndicator extension for tray icons to appear."
+msgstr "GNOME a besoin de l'extension AppIndicator pour afficher les icônes de la barre d'état."
+
 msgid "Go back"
 msgstr "Revenir en arrière"
 
@@ -7004,6 +7007,9 @@ msgstr "Échec de l'installation"
 msgid "Install GitHub App"
 msgstr "Installer la GitHub App"
 
+msgid "Install gnome-shell-extension-appindicator, enable appindicatorsupport@rgcjonas.gmail.com, then log out."
+msgstr "Installez gnome-shell-extension-appindicator, activez appindicatorsupport@rgcjonas.gmail.com, puis déconnectez-vous."
+
 msgid "Install Superset MCP in your client"
 msgstr "Installer Superset MCP dans votre client"
 
@@ -7268,6 +7274,12 @@ msgstr "Kbd"
 
 msgid "Keep docs fresh"
 msgstr "Garder la documentation à jour"
+
+msgid "Keep in tray"
+msgstr "Garder dans la barre d'état"
+
+msgid "Keep the app running in the system tray when closing the last window"
+msgstr "Garder l'application dans la barre d'état système à la fermeture de la dernière fenêtre"
 
 msgid "Keep waiting"
 msgstr "Continuer à attendre"
@@ -14341,6 +14353,9 @@ msgstr "Suivi"
 msgid "Translated"
 msgstr "Traduit"
 
+msgid "Tray icon needs AppIndicator"
+msgstr "L'icône de la barre d'état nécessite AppIndicator"
+
 msgid "Tree view"
 msgstr "Vue arborescente"
 
@@ -14485,6 +14500,9 @@ msgstr "Des exécutions sans surveillance de 8 heures ou plus réussissent sur l
 
 msgid "Unavailable"
 msgstr "Indisponible"
+
+msgid "Unavailable while Keep in tray is on — closing the last window hides the app instead of quitting"
+msgstr "Indisponible lorsque « Garder dans la barre d'état » est activé — fermer la dernière fenêtre masque l'application au lieu de quitter"
 
 msgid "Unavailable: {unavailableReason}"
 msgstr "Indisponible : {unavailableReason}"

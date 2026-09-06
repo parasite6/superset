@@ -2,6 +2,7 @@ import { app, BrowserWindow, shell } from "electron";
 import { env } from "main/env.main";
 import { isBrowserPanePopup } from "main/lib/browser/popup-window";
 import { loadReactDevToolsExtension } from "main/lib/extensions";
+import { isKeepInTrayEnabled } from "main/lib/tray/setting";
 import { PLATFORM } from "shared/constants";
 import { makeAppId } from "shared/utils";
 import { ignoreConsoleWarnings } from "../../utils/ignore-console-warnings";
@@ -61,9 +62,14 @@ export async function makeAppSetup(
 	});
 
 	// macOS: keep the app alive (standard behavior) — tray/dock provide re-entry.
-	// Windows/Linux: quit the app UI. Host-services are coupled to the app and
-	// stop with it; v1 pty-daemon survives separately.
-	app.on("window-all-closed", () => !PLATFORM.IS_MAC && app.quit());
+	// Linux keep-in-tray: last window hides; tray is the re-entry.
+	// Windows (and Linux with keep-in-tray off): quit the app UI. Host-services
+	// are coupled to the app and stop with it; v1 pty-daemon survives separately.
+	app.on("window-all-closed", () => {
+		if (PLATFORM.IS_MAC) return;
+		if (PLATFORM.IS_LINUX && isKeepInTrayEnabled()) return;
+		app.quit();
+	});
 
 	return window;
 }

@@ -25,6 +25,7 @@ bun run package -- --publish never --config electron-builder.ts
 Expected outputs in `apps/desktop/release/`:
 
 - `*.AppImage`
+- `*.rpm`
 - `*-linux.yml` (Linux auto-update manifest)
 
 # Linux auto-update verification (local)

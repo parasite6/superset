@@ -6415,6 +6415,9 @@ msgstr "Beri nama deskriptif agar Anda ingat kunci ini dipakai di mana."
 msgid "Globe"
 msgstr "Globe"
 
+msgid "GNOME needs the AppIndicator extension for tray icons to appear."
+msgstr "GNOME memerlukan ekstensi AppIndicator agar ikon baki muncul."
+
 msgid "Go back"
 msgstr "Kembali"
 
@@ -7004,6 +7007,9 @@ msgstr "Pemasangan gagal"
 msgid "Install GitHub App"
 msgstr "Pasang GitHub App"
 
+msgid "Install gnome-shell-extension-appindicator, enable appindicatorsupport@rgcjonas.gmail.com, then log out."
+msgstr "Instal gnome-shell-extension-appindicator, aktifkan appindicatorsupport@rgcjonas.gmail.com, lalu keluar dari sesi."
+
 msgid "Install Superset MCP in your client"
 msgstr "Pasang Superset MCP di klien Anda"
 
@@ -7268,6 +7274,12 @@ msgstr "Kbd"
 
 msgid "Keep docs fresh"
 msgstr "Jaga dokumentasi tetap segar"
+
+msgid "Keep in tray"
+msgstr "Tetap di baki sistem"
+
+msgid "Keep the app running in the system tray when closing the last window"
+msgstr "Tetap jalankan aplikasi di baki sistem saat jendela terakhir ditutup"
 
 msgid "Keep waiting"
 msgstr "Tunggu saja"
@@ -14341,6 +14353,9 @@ msgstr "Pelacakan"
 msgid "Translated"
 msgstr "Diterjemahkan"
 
+msgid "Tray icon needs AppIndicator"
+msgstr "Ikon baki memerlukan AppIndicator"
+
 msgid "Tree view"
 msgstr "Tampilan pohon"
 
@@ -14485,6 +14500,9 @@ msgstr "Run tanpa pengawasan selama 8 jam atau lebih berhasil pada mayoritas tik
 
 msgid "Unavailable"
 msgstr "Tidak tersedia"
+
+msgid "Unavailable while Keep in tray is on — closing the last window hides the app instead of quitting"
+msgstr "Tidak tersedia saat «Tetap di baki sistem» aktif — menutup jendela terakhir menyembunyikan aplikasi, bukan keluar"
 
 msgid "Unavailable: {unavailableReason}"
 msgstr "Tidak tersedia: {unavailableReason}"

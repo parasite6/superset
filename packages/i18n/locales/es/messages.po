@@ -6415,6 +6415,9 @@ msgstr "Ponle un nombre descriptivo a tu clave para recordar dónde se usa."
 msgid "Globe"
 msgstr "Globo"
 
+msgid "GNOME needs the AppIndicator extension for tray icons to appear."
+msgstr "GNOME necesita la extensión AppIndicator para mostrar los iconos de la bandeja."
+
 msgid "Go back"
 msgstr "Volver"
 
@@ -7004,6 +7007,9 @@ msgstr "Error al instalar"
 msgid "Install GitHub App"
 msgstr "Instalar la GitHub App"
 
+msgid "Install gnome-shell-extension-appindicator, enable appindicatorsupport@rgcjonas.gmail.com, then log out."
+msgstr "Instala gnome-shell-extension-appindicator, activa appindicatorsupport@rgcjonas.gmail.com y cierra la sesión."
+
 msgid "Install Superset MCP in your client"
 msgstr "Instala Superset MCP en tu cliente"
 
@@ -7268,6 +7274,12 @@ msgstr "Kbd"
 
 msgid "Keep docs fresh"
 msgstr "Mantener la documentación al día"
+
+msgid "Keep in tray"
+msgstr "Mantener en la bandeja"
+
+msgid "Keep the app running in the system tray when closing the last window"
+msgstr "Mantener la aplicación en la bandeja del sistema al cerrar la última ventana"
 
 msgid "Keep waiting"
 msgstr "Seguir esperando"
@@ -14341,6 +14353,9 @@ msgstr "Seguimiento"
 msgid "Translated"
 msgstr "Traducido"
 
+msgid "Tray icon needs AppIndicator"
+msgstr "El icono de la bandeja necesita AppIndicator"
+
 msgid "Tree view"
 msgstr "Vista de árbol"
 
@@ -14485,6 +14500,9 @@ msgstr "Las ejecuciones desatendidas de 8 horas o más salen bien en la mayoría
 
 msgid "Unavailable"
 msgstr "No disponible"
+
+msgid "Unavailable while Keep in tray is on — closing the last window hides the app instead of quitting"
+msgstr "No disponible con «Mantener en la bandeja» activado: cerrar la última ventana oculta la app en lugar de salir"
 
 msgid "Unavailable: {unavailableReason}"
 msgstr "No disponible: {unavailableReason}"

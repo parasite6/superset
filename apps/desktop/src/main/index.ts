@@ -61,7 +61,9 @@ import {
 	disposeTerminalHostClient,
 	getTerminalHostClient,
 } from "./lib/terminal-host/client";
-import { disposeTray, initTray } from "./lib/tray";
+import { disposeTray, syncTrayWithSetting } from "./lib/tray";
+import { shouldPromptQuitConfirmation } from "./lib/tray/keep-in-tray";
+import { isKeepInTrayEnabled } from "./lib/tray/setting";
 import { getFocusedOrLastWindow } from "./lib/window-registry/window-registry";
 import { sweepNetworkLogs } from "./network-logger-sweep";
 import {
@@ -276,7 +278,14 @@ app.on("before-quit", async (event) => {
 	if (isQuitting) return;
 
 	const isDev = process.env.NODE_ENV === "development";
-	if (!skipQuitConfirmation && !isDev && getConfirmOnQuitSetting()) {
+	if (
+		shouldPromptQuitConfirmation({
+			skipQuitConfirmation,
+			isDev,
+			confirmOnQuit: getConfirmOnQuitSetting(),
+			keepInTray: isKeepInTrayEnabled(),
+		})
+	) {
 		event.preventDefault();
 
 		try {
@@ -621,7 +630,7 @@ if (!gotTheLock) {
 			restoreWindows,
 		);
 		setupAutoUpdater();
-		initTray();
+		syncTrayWithSetting();
 
 		const coldStartUrl = findDeepLinkInArgv(process.argv);
 		if (coldStartUrl) {

@@ -205,6 +205,9 @@ app.post("/settings-changed", (_req, res) => {
 	// Emit even when the theme reload failed: local.db settings may still
 	// have changed, and the renderer refresh is driven by this event.
 	notificationsEmitter.emit("settings-external-change", { themeState });
+	void import("main/lib/tray").then((tray) => {
+		tray.syncTrayWithSetting();
+	});
 	res.json({ success: true, themeReloaded: themeState !== null });
 });
 

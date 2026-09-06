@@ -206,6 +206,7 @@ export const settings = sqliteTable("settings", {
 	language: text("language"),
 	activeOrganizationId: text("active_organization_id"),
 	confirmOnQuit: integer("confirm_on_quit", { mode: "boolean" }),
+	keepInTray: integer("keep_in_tray", { mode: "boolean" }),
 	terminalLinkBehavior: text(
 		"terminal_link_behavior",
 	).$type<TerminalLinkBehavior>(),

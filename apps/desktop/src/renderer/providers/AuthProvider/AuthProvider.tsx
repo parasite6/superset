@@ -5,6 +5,7 @@ import {
 	setAuthToken,
 	setJwt,
 } from "renderer/lib/auth-client";
+import { env } from "renderer/env.renderer";
 import { SupersetLogo } from "renderer/routes/sign-in/components/SupersetLogo/SupersetLogo";
 import { electronTrpc } from "../../lib/electron-trpc";
 
@@ -51,14 +52,18 @@ export function AuthProvider({ children }: { children: ReactNode }) {
 				const isExpired = new Date(storedToken.expiresAt) < new Date();
 				if (!isExpired) {
 					setAuthToken(storedToken.token);
-					// A hung session fetch must not hold boot on the splash forever —
-					// proceed after a bound; the routes show session-pending UI (#5729).
-					await Promise.race([
-						fetchSessionAndJwt(storedToken.token),
-						new Promise((resolve) =>
-							window.setTimeout(resolve, HYDRATION_TIMEOUT_MS),
-						),
-					]);
+					// Mock/local boot does not need the cloud session or JWT; waiting
+					// on them (often a CORS failure to production) only delayed splash.
+					if (!env.SKIP_ENV_VALIDATION) {
+						// A hung session fetch must not hold boot on the splash forever —
+						// proceed after a bound; the routes show session-pending UI (#5729).
+						await Promise.race([
+							fetchSessionAndJwt(storedToken.token),
+							new Promise((resolve) =>
+								window.setTimeout(resolve, HYDRATION_TIMEOUT_MS),
+							),
+						]);
+					}
 				}
 			}
 			if (!cancelled) {

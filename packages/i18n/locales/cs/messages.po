@@ -6415,6 +6415,9 @@ msgstr "Pojmenujte klíč popisně, ať víte, kde se používá."
 msgid "Globe"
 msgstr "Zeměkoule"
 
+msgid "GNOME needs the AppIndicator extension for tray icons to appear."
+msgstr "GNOME potřebuje rozšíření AppIndicator, aby se ikony v oznamovací oblasti zobrazily."
+
 msgid "Go back"
 msgstr "Zpět"
 
@@ -7004,6 +7007,9 @@ msgstr "Instalace selhala"
 msgid "Install GitHub App"
 msgstr "Nainstalovat GitHub App"
 
+msgid "Install gnome-shell-extension-appindicator, enable appindicatorsupport@rgcjonas.gmail.com, then log out."
+msgstr "Nainstalujte gnome-shell-extension-appindicator, povolte appindicatorsupport@rgcjonas.gmail.com a odhlaste se."
+
 msgid "Install Superset MCP in your client"
 msgstr "Nainstalujte Superset MCP do svého klienta"
 
@@ -7268,6 +7274,12 @@ msgstr "Kbd"
 
 msgid "Keep docs fresh"
 msgstr "Udržovat dokumentaci aktuální"
+
+msgid "Keep in tray"
+msgstr "Ponechat v oznamovací oblasti"
+
+msgid "Keep the app running in the system tray when closing the last window"
+msgstr "Po zavření posledního okna nechat aplikaci běžet v oznamovací oblasti"
 
 msgid "Keep waiting"
 msgstr "Počkat dál"
@@ -14341,6 +14353,9 @@ msgstr "Sleduji"
 msgid "Translated"
 msgstr "Přeloženo"
 
+msgid "Tray icon needs AppIndicator"
+msgstr "Ikona v oznamovací oblasti vyžaduje AppIndicator"
+
 msgid "Tree view"
 msgstr "Stromové zobrazení"
 
@@ -14485,6 +14500,9 @@ msgstr "Běhy bez dozoru trvající 8 hodin a víc uspějí u většiny rutinní
 
 msgid "Unavailable"
 msgstr "Nedostupné"
+
+msgid "Unavailable while Keep in tray is on — closing the last window hides the app instead of quitting"
+msgstr "Nedostupné, když je zapnuto „Ponechat v oznamovací oblasti“ — zavření posledního okna aplikaci skryje místo ukončení"
 
 msgid "Unavailable: {unavailableReason}"
 msgstr "Nedostupné: {unavailableReason}"

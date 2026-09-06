@@ -4,6 +4,8 @@ import { msg } from "@lingui/core/macro";
 import { i18n } from "@superset/i18n";
 import {
 	app,
+	BrowserWindow,
+	dialog,
 	Menu,
 	type MenuItemConstructorOptions,
 	nativeImage,
@@ -20,6 +22,13 @@ import {
 } from "main/lib/host-service-coordinator";
 import { menuEmitter } from "main/lib/menu-events";
 import { confirmAndQuitCompletely } from "main/lib/quit-completely";
+import {
+	canInitTray,
+	isGnomeDesktop,
+	shouldDestroyTrayOnDisable,
+} from "./keep-in-tray";
+import { isKeepInTrayEnabled } from "./setting";
+import { isStatusNotifierHostRegistered } from "./status-notifier";
 
 /** Must have "Template" suffix for macOS dark/light mode support */
 const TRAY_ICON_FILENAME = "iconTemplate.png";
@@ -54,6 +63,46 @@ function getTrayIconPath(): string | null {
 }
 
 let tray: Tray | null = null;
+let trayStatusListenerAttached = false;
+let missingAppIndicatorWarned = false;
+
+function showHiddenWindows(): void {
+	for (const window of BrowserWindow.getAllWindows()) {
+		if (window.isDestroyed() || window.isVisible()) continue;
+		window.show();
+	}
+}
+
+async function maybeWarnMissingAppIndicator(): Promise<void> {
+	if (process.platform !== "linux") return;
+	if (missingAppIndicatorWarned) return;
+	if (!isGnomeDesktop(process.env.XDG_CURRENT_DESKTOP)) return;
+	if (await isStatusNotifierHostRegistered()) return;
+
+	missingAppIndicatorWarned = true;
+	try {
+		await dialog.showMessageBox({
+			type: "info",
+			buttons: [i18n._(msg({ message: "OK" }))],
+			defaultId: 0,
+			title: i18n._(msg({ message: "Tray icon needs AppIndicator" })),
+			message: i18n._(
+				msg({
+					message:
+						"GNOME needs the AppIndicator extension for tray icons to appear.",
+				}),
+			),
+			detail: i18n._(
+				msg({
+					message:
+						"Install gnome-shell-extension-appindicator, enable appindicatorsupport@rgcjonas.gmail.com, then log out.",
+				}),
+			),
+		});
+	} catch (error) {
+		console.error("[Tray] AppIndicator hint failed:", error);
+	}
+}
 
 function createTrayIcon(): Electron.NativeImage | null {
 	const iconPath = getTrayIconPath();
@@ -71,11 +120,14 @@ function createTrayIcon(): Electron.NativeImage | null {
 			return null;
 		}
 
-		// 16x16 is standard menu bar size, auto-scales for Retina
-		if (size.width > 22 || size.height > 22) {
-			image = image.resize({ width: 16, height: 16 });
+		// 16x16 is standard macOS menu bar size; Linux panels prefer ~22px
+		const target = process.platform === "linux" ? 22 : 16;
+		if (size.width > target || size.height > target) {
+			image = image.resize({ width: target, height: target });
 		}
-		image.setTemplateImage(true);
+		if (process.platform === "darwin") {
+			image.setTemplateImage(true);
+		}
 		return image;
 	} catch (error) {
 		console.warn("[Tray] Failed to load icon:", error);
@@ -307,14 +359,14 @@ export function refreshTrayMenu(): void {
 	void updateTrayMenu();
 }
 
-/** Call once after app.whenReady() */
+/** Call after app.whenReady(), and again when keep-in-tray changes. */
 export function initTray(): void {
-	if (tray) {
-		console.warn("[Tray] Already initialized");
+	if (tray && !tray.isDestroyed()) {
 		return;
 	}
+	tray = null;
 
-	if (process.platform !== "darwin") {
+	if (!canInitTray(process.platform, isKeepInTrayEnabled())) {
 		return;
 	}
 
@@ -330,14 +382,24 @@ export function initTray(): void {
 
 		void updateTrayMenu();
 
-		const manager = getHostServiceCoordinator();
-		manager.on("status-changed", (_event: HostServiceStatusEvent) => {
-			void updateTrayMenu();
-		});
+		if (!trayStatusListenerAttached) {
+			const manager = getHostServiceCoordinator();
+			manager.on("status-changed", (_event: HostServiceStatusEvent) => {
+				void updateTrayMenu();
+			});
+			trayStatusListenerAttached = true;
+		}
 
 		tray.on("mouse-enter", () => {
 			void updateTrayMenu();
 		});
+
+		if (process.platform === "linux") {
+			tray.on("click", () => {
+				focusMainWindow();
+			});
+			void maybeWarnMissingAppIndicator();
+		}
 
 		console.log("[Tray] Initialized successfully");
 	} catch (error) {
@@ -345,10 +407,30 @@ export function initTray(): void {
 	}
 }
 
+/** Apply the current keep-in-tray setting: create or tear down the icon. */
+export function syncTrayWithSetting(): void {
+	if (canInitTray(process.platform, isKeepInTrayEnabled())) {
+		initTray();
+		return;
+	}
+
+	if (process.platform === "linux") {
+		showHiddenWindows();
+	}
+
+	if (!shouldDestroyTrayOnDisable(process.platform)) {
+		return;
+	}
+
+	disposeTray();
+}
+
 /** Call on app quit */
 export function disposeTray(): void {
-	if (tray) {
+	if (!tray) return;
+	tray.removeAllListeners();
+	if (!tray.isDestroyed()) {
 		tray.destroy();
-		tray = null;
 	}
+	tray = null;
 }

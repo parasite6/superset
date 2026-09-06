@@ -13,6 +13,7 @@ import { electronTrpc } from "renderer/lib/electron-trpc";
 import { HighlightText } from "renderer/routes/_authenticated/settings/components/HighlightText";
 import { type ChangesOpenTarget, useSettings } from "renderer/stores/settings";
 import { useSettingsSearchQuery } from "renderer/stores/settings-state";
+import { DEFAULT_KEEP_IN_TRAY, PLATFORM } from "shared/constants";
 import {
 	isItemVisible,
 	SETTING_ITEM_ID,
@@ -31,6 +32,9 @@ export function BehaviorSettings({ visibleItems }: BehaviorSettingsProps) {
 		SETTING_ITEM_ID.BEHAVIOR_CONFIRM_QUIT,
 		visibleItems,
 	);
+	const showKeepInTray =
+		PLATFORM.IS_LINUX &&
+		isItemVisible(SETTING_ITEM_ID.BEHAVIOR_KEEP_IN_TRAY, visibleItems);
 	const showFileOpenMode = isItemVisible(
 		SETTING_ITEM_ID.BEHAVIOR_FILE_OPEN_MODE,
 		visibleItems,
@@ -78,6 +82,30 @@ export function BehaviorSettings({ visibleItems }: BehaviorSettingsProps) {
 	const handleConfirmToggle = (enabled: boolean) => {
 		setConfirmOnQuit.mutate({ enabled });
 	};
+
+	const { data: keepInTray, isLoading: isKeepInTrayLoading } =
+		electronTrpc.settings.getKeepInTray.useQuery(undefined, {
+			enabled: PLATFORM.IS_LINUX,
+		});
+	const setKeepInTray = electronTrpc.settings.setKeepInTray.useMutation({
+		onMutate: async ({ enabled }) => {
+			await utils.settings.getKeepInTray.cancel();
+			const previous = utils.settings.getKeepInTray.getData();
+			utils.settings.getKeepInTray.setData(undefined, enabled);
+			return { previous };
+		},
+		onError: (_err, _vars, context) => {
+			if (context?.previous !== undefined) {
+				utils.settings.getKeepInTray.setData(undefined, context.previous);
+			}
+		},
+		onSettled: () => {
+			utils.settings.getKeepInTray.invalidate();
+		},
+	});
+
+	const trayKeepsApp =
+		PLATFORM.IS_LINUX && (keepInTray ?? DEFAULT_KEEP_IN_TRAY);
 
 	const { data: fileOpenMode, isLoading: isFileOpenModeLoading } =
 		electronTrpc.settings.getFileOpenMode.useQuery();
@@ -154,6 +182,33 @@ export function BehaviorSettings({ visibleItems }: BehaviorSettingsProps) {
 			</div>
 
 			<div className="space-y-6">
+				{showKeepInTray && (
+					<div className="flex items-center justify-between">
+						<div className="space-y-0.5">
+							<Label htmlFor="keep-in-tray" className="text-sm font-medium">
+								<HighlightText
+									text={t({
+										message: "Keep in tray",
+									})}
+									query={searchQuery}
+								/>
+							</Label>
+							<p className="text-xs text-muted-foreground">
+								<Trans>
+									Keep the app running in the system tray when closing the last
+									window
+								</Trans>
+							</p>
+						</div>
+						<Switch
+							id="keep-in-tray"
+							checked={keepInTray ?? DEFAULT_KEEP_IN_TRAY}
+							onCheckedChange={(enabled) => setKeepInTray.mutate({ enabled })}
+							disabled={isKeepInTrayLoading || setKeepInTray.isPending}
+						/>
+					</div>
+				)}
+
 				{showConfirmQuit && (
 					<div className="flex items-center justify-between">
 						<div className="space-y-0.5">
@@ -166,14 +221,25 @@ export function BehaviorSettings({ visibleItems }: BehaviorSettingsProps) {
 								/>
 							</Label>
 							<p className="text-xs text-muted-foreground">
-								<Trans>Show a confirmation dialog when quitting the app</Trans>
+								{trayKeepsApp ? (
+									<Trans>
+										Unavailable while Keep in tray is on — closing the last
+										window hides the app instead of quitting
+									</Trans>
+								) : (
+									<Trans>
+										Show a confirmation dialog when quitting the app
+									</Trans>
+								)}
 							</p>
 						</div>
 						<Switch
 							id="confirm-on-quit"
 							checked={confirmOnQuit ?? true}
 							onCheckedChange={handleConfirmToggle}
-							disabled={isConfirmLoading || setConfirmOnQuit.isPending}
+							disabled={
+								isConfirmLoading || setConfirmOnQuit.isPending || trayKeepsApp
+							}
 						/>
 					</div>
 				)}

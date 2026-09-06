@@ -6415,6 +6415,9 @@ msgstr "Дайте ключу понятное название, чтобы по
 msgid "Globe"
 msgstr "Глобус"
 
+msgid "GNOME needs the AppIndicator extension for tray icons to appear."
+msgstr "GNOME нужно расширение AppIndicator, чтобы значки появлялись в трее."
+
 msgid "Go back"
 msgstr "Назад"
 
@@ -7004,6 +7007,9 @@ msgstr "Не удалось установить"
 msgid "Install GitHub App"
 msgstr "Установить GitHub App"
 
+msgid "Install gnome-shell-extension-appindicator, enable appindicatorsupport@rgcjonas.gmail.com, then log out."
+msgstr "Установите gnome-shell-extension-appindicator, включите appindicatorsupport@rgcjonas.gmail.com и выйдите из сеанса."
+
 msgid "Install Superset MCP in your client"
 msgstr "Установите Superset MCP в своём клиенте"
 
@@ -7268,6 +7274,12 @@ msgstr "Kbd"
 
 msgid "Keep docs fresh"
 msgstr "Держать документацию актуальной"
+
+msgid "Keep in tray"
+msgstr "Оставлять в трее"
+
+msgid "Keep the app running in the system tray when closing the last window"
+msgstr "Оставлять приложение в системном трее при закрытии последнего окна"
 
 msgid "Keep waiting"
 msgstr "Продолжить ждать"
@@ -14341,6 +14353,9 @@ msgstr "Отслеживание"
 msgid "Translated"
 msgstr "Переведено"
 
+msgid "Tray icon needs AppIndicator"
+msgstr "Значку в трее требуется AppIndicator"
+
 msgid "Tree view"
 msgstr "Вид дерева"
 
@@ -14485,6 +14500,9 @@ msgstr "Автономные прогоны от 8 часов и дольше у
 
 msgid "Unavailable"
 msgstr "Недоступно"
+
+msgid "Unavailable while Keep in tray is on — closing the last window hides the app instead of quitting"
+msgstr "Недоступно, пока включено «Оставлять в трее» — закрытие последнего окна скрывает приложение, а не завершает его"
 
 msgid "Unavailable: {unavailableReason}"
 msgstr "Недоступно: {unavailableReason}"

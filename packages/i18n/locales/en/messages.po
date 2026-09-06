@@ -6415,6 +6415,9 @@ msgstr "Give your key a descriptive name to remember where it's used."
 msgid "Globe"
 msgstr "Globe"
 
+msgid "GNOME needs the AppIndicator extension for tray icons to appear."
+msgstr "GNOME needs the AppIndicator extension for tray icons to appear."
+
 msgid "Go back"
 msgstr "Go back"
 
@@ -7004,6 +7007,9 @@ msgstr "Install failed"
 msgid "Install GitHub App"
 msgstr "Install GitHub App"
 
+msgid "Install gnome-shell-extension-appindicator, enable appindicatorsupport@rgcjonas.gmail.com, then log out."
+msgstr "Install gnome-shell-extension-appindicator, enable appindicatorsupport@rgcjonas.gmail.com, then log out."
+
 msgid "Install Superset MCP in your client"
 msgstr "Install Superset MCP in your client"
 
@@ -7268,6 +7274,12 @@ msgstr "Kbd"
 
 msgid "Keep docs fresh"
 msgstr "Keep docs fresh"
+
+msgid "Keep in tray"
+msgstr "Keep in tray"
+
+msgid "Keep the app running in the system tray when closing the last window"
+msgstr "Keep the app running in the system tray when closing the last window"
 
 msgid "Keep waiting"
 msgstr "Keep waiting"
@@ -14341,6 +14353,9 @@ msgstr "Tracking"
 msgid "Translated"
 msgstr "Translated"
 
+msgid "Tray icon needs AppIndicator"
+msgstr "Tray icon needs AppIndicator"
+
 msgid "Tree view"
 msgstr "Tree view"
 
@@ -14485,6 +14500,9 @@ msgstr "Unattended runs of 8 hours or more succeed on a majority of routine tick
 
 msgid "Unavailable"
 msgstr "Unavailable"
+
+msgid "Unavailable while Keep in tray is on — closing the last window hides the app instead of quitting"
+msgstr "Unavailable while Keep in tray is on — closing the last window hides the app instead of quitting"
 
 msgid "Unavailable: {unavailableReason}"
 msgstr "Unavailable: {unavailableReason}"

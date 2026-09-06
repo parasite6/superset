@@ -6415,6 +6415,9 @@ msgstr "給金鑰起一個描述性的名稱，方便記住它用在哪裡。"
 msgid "Globe"
 msgstr "地球"
 
+msgid "GNOME needs the AppIndicator extension for tray icons to appear."
+msgstr "GNOME 需要 AppIndicator 擴充功能才能顯示系統匣圖示。"
+
 msgid "Go back"
 msgstr "返回"
 
@@ -7004,6 +7007,9 @@ msgstr "安裝失敗"
 msgid "Install GitHub App"
 msgstr "安裝GitHub App"
 
+msgid "Install gnome-shell-extension-appindicator, enable appindicatorsupport@rgcjonas.gmail.com, then log out."
+msgstr "安裝 gnome-shell-extension-appindicator，啟用 appindicatorsupport@rgcjonas.gmail.com，然後登出。"
+
 msgid "Install Superset MCP in your client"
 msgstr "在你的客戶端裡安裝Superset MCP"
 
@@ -7268,6 +7274,12 @@ msgstr "Kbd"
 
 msgid "Keep docs fresh"
 msgstr "讓文件保持最新"
+
+msgid "Keep in tray"
+msgstr "保持在系統匣"
+
+msgid "Keep the app running in the system tray when closing the last window"
+msgstr "關閉最後一個視窗時，應用程式繼續在系統匣中執行"
 
 msgid "Keep waiting"
 msgstr "繼續等待"
@@ -14341,6 +14353,9 @@ msgstr "已追蹤"
 msgid "Translated"
 msgstr "已翻譯"
 
+msgid "Tray icon needs AppIndicator"
+msgstr "系統匣圖示需要 AppIndicator"
+
 msgid "Tree view"
 msgstr "樹狀檢視"
 
@@ -14485,6 +14500,9 @@ msgstr "無人值守執行8小時以上，在多數常規工單上無需人工�
 
 msgid "Unavailable"
 msgstr "不可用"
+
+msgid "Unavailable while Keep in tray is on — closing the last window hides the app instead of quitting"
+msgstr "開啟「保持在系統匣」時無法使用 — 關閉最後一個視窗會隱藏應用程式而不是結束"
 
 msgid "Unavailable: {unavailableReason}"
 msgstr "不可用：{unavailableReason}"

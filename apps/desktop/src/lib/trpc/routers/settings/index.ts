@@ -47,6 +47,7 @@ import { hasCustomRingtone } from "main/lib/custom-ringtones";
 import { getHostServiceCoordinator } from "main/lib/host-service-coordinator";
 import { applyAppLanguage } from "main/lib/language";
 import { localDb } from "main/lib/local-db";
+import { resolveKeepInTray } from "main/lib/tray/keep-in-tray";
 import {
 	DEFAULT_AUTO_APPLY_DEFAULT_PRESET,
 	DEFAULT_CONFIRM_ON_QUIT,
@@ -62,6 +63,7 @@ import {
 	DEFAULT_WAIT_FOR_SETUP_BEFORE_AGENT,
 	MAX_TERMINAL_PARKED_RUNTIME_CAP,
 	MIN_TERMINAL_PARKED_RUNTIME_CAP,
+	PLATFORM,
 } from "shared/constants";
 import { normalizePresetProjectIds } from "shared/preset-project-targeting";
 import { getPresetsForTriggerField } from "shared/preset-trigger-selection";
@@ -714,6 +716,30 @@ export const createSettingsRouter = () => {
 						set: { confirmOnQuit: input.enabled },
 					})
 					.run();
+
+				return { success: true };
+			}),
+
+		getKeepInTray: publicProcedure.query(() => {
+			const row = getSettings();
+			return resolveKeepInTray(row.keepInTray, PLATFORM.IS_LINUX);
+		}),
+
+		setKeepInTray: publicProcedure
+			.input(z.object({ enabled: z.boolean() }))
+			.mutation(({ input }) => {
+				localDb
+					.insert(settings)
+					.values({ id: 1, keepInTray: input.enabled })
+					.onConflictDoUpdate({
+						target: settings.id,
+						set: { keepInTray: input.enabled },
+					})
+					.run();
+
+				void import("main/lib/tray").then((tray) => {
+					tray.syncTrayWithSetting();
+				});
 
 				return { success: true };
 			}),

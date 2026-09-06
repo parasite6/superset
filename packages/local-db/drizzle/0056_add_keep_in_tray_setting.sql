@@ -1,0 +1,1 @@
+ALTER TABLE `settings` ADD `keep_in_tray` integer;

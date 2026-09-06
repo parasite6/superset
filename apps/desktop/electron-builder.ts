@@ -150,7 +150,7 @@ const config: Configuration = {
 		...(existsSync(linuxIconPath) ? { icon: linuxIconPath } : {}),
 		category: "Utility",
 		synopsis: pkg.description,
-		target: ["AppImage"],
+		target: ["AppImage", "rpm"],
 		artifactName: `superset-\${version}-\${arch}.\${ext}`,
 		// GNOME's app menus only show their heuristic "New Window" item
 		// intermittently for running apps; an explicit desktop action (the
@@ -176,6 +176,11 @@ const config: Configuration = {
 				},
 			},
 		},
+	},
+
+	rpm: {
+		fpm: ["--depends=gnome-shell-extension-appindicator"],
+		afterInstall: join(__dirname, "scripts/rpm-after-install.sh"),
 	},
 
 	// Windows
